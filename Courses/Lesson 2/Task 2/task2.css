@@ -1,0 +1,137 @@
+.main {
+    height: 500px;
+    width: 1000px;
+    border: 2px solid #8C93A4;
+    border-radius: 15px;
+    background-color: #C3CADB;
+    padding: 33px 16px 16px 20px;
+    font-family: sans-serif;
+}
+
+.container {
+    background-color: white;
+    color: black;
+    border: 1px solid #ADB3C0;
+    padding: 0 5px 10px 5px;
+    border-radius: 5px;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.block {
+    color: white;
+    font-weight: bold;
+    background-color: #7E94C4;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.column {
+    float: left;
+    height: 460px;
+}
+
+.container.host-processing {
+    height: 295px;
+    width: 165px;
+}
+
+.container.host-processing .block p {
+    margin: 23px;
+}
+
+.container.dram .block p {
+    margin-bottom: 52px;
+}
+
+.container.power .block {
+    margin-bottom: 11px;
+}
+
+.container.power .block p {
+    margin-bottom: 33px;
+}
+
+.column-first {
+    float: left;
+    width: 162px;
+    padding-right: 22px;
+    height: 400px;
+}
+
+.column-second, .column-third {
+    float: left;
+    width: 118px;
+    padding-right: 13px;
+}
+.block.gpu{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.block.display-pipe{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+/* .container.multimedia .column-first .block p {
+    margin: 0px;
+} */
+.block.transport{
+    padding-top: 10px;
+    padding-bottom: 9px;
+}
+.block.jpeg{
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.block.multi-format{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.block.webm{
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+.block.audio{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.block.hevc{
+    padding-top: 10px;
+    padding-bottom: 9px;
+}
+.block.h264{
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.container.interfaces .block {
+    margin: 0px;
+}
+
+.container.interfaces .block p {
+    margin: 9px;
+}
+
+.container.transport .block {
+    margin: 0px;
+}
+
+.container.multimedia {
+    width: 446px;
+    height: 472px;
+}

@@ -1,0 +1,45 @@
+header{
+    border: black 1px solid;
+    width: 60%;
+    height: 30px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: lightcoral;
+}
+
+header ul li{
+    display: inline;
+    background-color: lightpink;
+    margin-right: 20%;
+}
+
+header ul{
+    margin: 6.5px;
+
+}
+
+header a{
+    color: gray;
+    text-decoration: none;
+}
+
+header li:hover{
+    background-color: linen;
+}
+main{
+    width: 60%;
+    margin: 0 auto;
+}
+.firstlist{
+   font-style: italic;
+}
+.secondlist{
+    font-size: 30px;
+}
+.thirdlist a
+{
+  color: yellow;
+}
+.thirdlist a:hover{
+    color: red;
+}

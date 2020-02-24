@@ -1,0 +1,21 @@
+body{
+    /* margin-top: 100px; */
+    background: #aaa;
+    margin: 0;
+}
+#wraper{
+    width: 400px;
+    height: 400px;
+    background: rgba(112,112,112,0.5);
+    position: absolute; 
+    /* margin-left: 300px; */
+    left: 200px;
+    top: 100px;
+}
+#header{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background: #ff0;
+    left: 1000px;
+}

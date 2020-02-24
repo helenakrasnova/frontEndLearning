@@ -1,0 +1,136 @@
+.login-page {
+    height: 250px;
+    width: 677px;
+    margin: 0 auto;
+    border: 3px solid black;
+}
+
+.login-page__header {
+    border-bottom: 1px solid #E4ECF1;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding-left: 25px;
+    padding-top: 12px;
+    padding-bottom: 14px;
+    position: relative;
+}
+
+.login-page__body {
+    padding-left: 23px;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    padding-top: 15px;
+    letter-spacing: 0.18px;
+}
+
+.close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+.close:before, .close:after {
+    position: absolute;
+    left: 45px;
+    content: ' ';
+    height: 11px;
+    width: 2px;
+    background-color: #606060;
+    top: -18px;
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
+
+.login-page__footer {
+    font-size: 12px;
+    padding-top: 53px;
+    letter-spacing: 0.06px;
+}
+
+.login-page__footer a:visited {
+    color: #0768D3;
+}
+
+.vk-button, .ok-button, .fb-button, .tw-button {
+    height: 34px;
+    border-radius: 5px;
+    color: white;
+    display: block;
+    font-size: 16px;
+    position: relative;
+    float: left;
+    margin-right: 20px;
+    margin-top: 28px;
+}
+
+.vk-button {
+    width: 140px;
+    background-color: #175B90;
+}
+
+.vk-button__text, .ok-button__text, .fb-button__text, .tw-button__text {
+    position: absolute;
+    top: 7px;
+    left: 38px;
+}
+
+.vk-button__logo, .ok-button__logo, .fb-button__logo, .tw-button__logo {
+    position: absolute;
+}
+
+.ok-button {
+    width: 181px;
+    background-color: #F87807;
+}
+
+.fb-button {
+    width: 136px;
+    background-color: #255899;
+}
+
+.tw-button {
+    width: 114px;
+    background-color: #429CCE;
+}
+
+.vk-button__logo {
+    left: 6px;
+    top: 5px;
+}
+
+.ok-button__logo {
+    left: 9px;
+    top: 6px;
+}
+
+.fb-button__logo {
+    left: 6px;
+    top: 5px;
+}
+
+.tw-button__logo {
+    left: 5px;
+    top: 5px;
+}
+
+.vk-button:hover, .ok-button:hover, .fb-button:hover, .tw-button:hover {
+    background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+    /* background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+    background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+    background-image: -ms-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+    background-image: linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); */
+}

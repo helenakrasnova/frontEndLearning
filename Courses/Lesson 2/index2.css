@@ -1,0 +1,35 @@
+.parent{
+    float: left;
+}
+.square1{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    border: black 1px solid;
+    float: inherit;
+    margin: 10px;
+}
+.square2{
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+    border: black 1px solid;
+    float: inherit;
+    margin: 10px;
+}
+.square3{
+    background-color: green;
+    height: 100px;
+    width: 100px;
+    border: black 1px solid;
+    float: inherit;
+    margin: 10px;
+}
+.square4{
+    clear: both;
+    background-color: #7e7e7e;
+    height: 100px;
+    width: 100px;
+    border: black 1px solid;
+    margin: 10px;
+}

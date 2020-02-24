@@ -1,0 +1,30 @@
+body{
+    background-color: blue;
+}
+.button{
+   height: 70px;
+   width: 260px;
+   border-radius: 35px;
+   border: 2px solid white;
+  background-image: linear-gradient(#fbb5d8, #F1CFDD, #fbb5d8);
+   position: relative;
+   margin: auto;
+}
+.button::before{
+    height: 90%;
+    width: 94%;
+    border: 2px solid white;
+    content: "";
+    position: absolute;
+    border-radius: 35px;
+    left: 2%;
+    top: 3%;
+}
+.button::after{
+    position: relative;
+    content: "Кнопка";
+    left: 30%;
+    top: 20%;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

@@ -1,0 +1,130 @@
+.container{
+    height: 1041px;
+    width: 1206px;
+}
+.block{
+    background-color: #898697;
+    color: white;
+    font-family: sans-serif;
+    margin: 5px;
+    text-align: center;
+    position: relative;
+}
+.block p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+}
+.column-first{
+    float: left;
+}
+.column-second{
+    float: right;
+}
+
+.block.micro-bar{
+    width: 88px;
+    height: 31px;
+}
+.block.button-2{
+    width: 120px;
+    height: 60px;
+}
+.block.half-banner{
+    width: 234px;
+    height: 60px;
+}
+.block.rectangle{
+    width: 300px;
+    height: 100px;
+}
+.block.square-pop-up{
+    width: 250px;
+    height: 250px;
+    float: right;
+}
+.block.medium-rectangle{
+    width: 200px;
+    height: 250px;
+    float: right;
+}
+.block.vertical-banner{
+    width: 120px;
+    height: 240px;
+    float: right;
+    margin-top: 15px;
+}
+.column-third{
+    clear: both;
+    float: left;
+}
+ .block.full-banner{
+    width: 468px;
+    height: 60px;
+    float: left;
+}
+.block.leaderboard{
+    width: 728px;
+    height: 90px;
+    clear: both;
+    float: left;
+} 
+.column-fouth{
+    clear: both;
+    float: left;
+}
+.block.half-page-ad{
+    width: 300px;
+    height: 600px;
+    clear: both;
+    float: left;
+}
+.block.wide-skyscraper{
+    width: 160px;
+    height: 600px;
+    float: left;
+}
+.block.skyscraper{
+    width: 120px;
+    height: 600px;
+    float: left;
+}
+.column-fifth{
+    float: right;
+}
+.block.button-1{
+    width: 120px;
+    height: 90px;
+    float: right;
+    margin-top: 45px;
+}
+.block.square-button{
+    width: 125px;
+    height: 125px;
+    float: right;
+    margin-top: 32px;
+}
+.block.rectangle-small{
+    width: 180px;
+    height: 150px;
+    float: right;
+    margin-top: 25px;
+}
+
+
+
+.block.vertical-rectangle{
+    width: 240px;
+    height: 400px;
+    float: left;
+    margin-top: 27px;
+}
+.block.large-rectangle{
+    width: 336px;
+    height: 280px;
+    float: left;
+    margin-top: 147px;
+}
+

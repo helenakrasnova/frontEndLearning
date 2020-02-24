@@ -1,0 +1,44 @@
+.container{
+    height: 1000px;
+    width: 1000px;
+    border: 1px solid blueviolet;
+    background-color: gray;
+    /* position: static; */
+    margin: 0 auto;
+    
+}
+
+.first {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    background-color: green;
+    float: left;
+    position: sticky;
+     /* top: 0px; 
+    left: 0px;  */
+}
+
+.second {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    background-color: hotpink;
+    float: left;
+    position: relative;
+    top: 200px;
+    left: 400px;
+}
+
+.third {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+    background-color: yellow;
+    float: left;
+    
+    position: fixed;
+    left: 566px;
+    top: 9px;
+    
+}

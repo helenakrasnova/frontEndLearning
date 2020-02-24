@@ -1,0 +1,121 @@
+.content{
+    height: 1060px;
+    width: 1058px;
+    font-size: 14px;
+}
+.block{
+    background-color: #01C0F4;
+    margin: 5px 5px 10px 10px;
+}
+p.words{
+    margin-left: 18px;
+    font-family: sans-serif;
+    color: black;
+    font-weight: bold;
+}
+p.numbers{
+    margin: 1px;
+    font-family: sans-serif;
+    color: white;
+    font-weight: bold;
+    padding-top: 8px;
+    padding-left: 17px;
+}
+.column-first .block.top-left{
+    height: 600px;
+    width: 300px;
+}
+.column-first .block.bottom-left{
+    height: 400px;
+    width: 240px;
+}
+.column-first{
+    float: left;
+}
+.column-second{
+    float: right; 
+}
+.column-second .block.first-right{
+    height: 90px;
+    width: 728px;
+}
+.column-second .block.second-right{
+    height: 60px;
+    width: 468px;
+    float: left;
+}
+.column-second .block.third-right{
+    height: 31px;
+    width: 88px;
+    float: left;
+}
+.column-second .block.fourth-right{
+    height: 250px;
+    width: 300px;
+    clear: both;
+    float: left;
+}
+.column-second .block.firth-right{
+    height: 250px;
+    width: 250px;
+    float: left;
+}
+.column-second .block.sixth-right{
+    height: 240px;
+    width: 120px;
+    float: left;
+}
+
+.column-second .block.skyscraper{
+    height: 600px;
+    width: 120px;
+    clear: both;
+     float: left; 
+}
+.column-second .block.wide-skyscraper{
+    height: 600px;
+    width: 160px;
+    float: left; 
+}
+.column-second .block.large-rectangle{
+    height: 280px;
+    width: 336px;
+    float: left;
+}
+.column-second .block.small-rectangle{
+    height: 150px;
+    width: 180px;
+    clear: both;
+    float: left;
+}
+
+.column-rectangles{
+    float: left; 
+}
+
+.column-skyscraper{
+    clear: both;
+}
+.column-second .block.square-button{
+    height: 125px;
+    width: 125px;
+    float: left;
+}
+.column-second .block.button-first{
+    height: 125px;
+    width: 125px;
+    clear: both;
+    float: left;
+}
+.column-second .block.banner{
+    height: 60px;
+    width: 234px;
+    float: left;
+}
+.column-second .block.button-second{
+    height: 60px;
+    width: 120px;
+    clear: both;
+    float: left;
+}
+

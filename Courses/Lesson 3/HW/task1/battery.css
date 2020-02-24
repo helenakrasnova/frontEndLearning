@@ -1,0 +1,55 @@
+.battery-level-low, .battery-level-medium, .battery-level-high{
+    width: 170px;
+    height: 70px;
+    border: 4px solid black;
+    position: relative;
+    margin: 10px;
+}
+.battery-level-low::after, .battery-level-medium::after,
+.battery-level-high::after{
+   content: "";
+   position: absolute;
+   width: 8px;
+   height: 35px;
+   border: 4px solid black;
+   left: 170px;
+   top: 11px;
+   background-color: black;
+}
+.battery-level-low::before{
+    content: "";
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    background-color: red;
+}
+.battery-level-medium::before{
+    content: "";
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    background-color: yellow;
+}
+.battery-level-high::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: green;
+    animation-name: charge;
+    animation-duration: 3s;
+}
+@keyframes charge{
+    from{
+        width: 0%;
+        background-color: red;
+    }
+    to{
+        width: 100%;
+        background-color: green;
+    }
+    50%{
+        width: 50%;
+        background-color: yellow;
+    }
+}

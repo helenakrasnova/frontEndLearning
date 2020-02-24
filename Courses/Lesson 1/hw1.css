@@ -1,0 +1,15 @@
+p{
+  height: 100px;
+  width: 100px;
+  border: 1px black dotted;
+  text-align: center;
+}
+#red_color{
+    background-color: red;
+}
+#yellow_color{
+    background-color: yellow;
+}
+#green_color{
+    background-color: green;
+}

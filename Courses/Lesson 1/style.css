@@ -1,0 +1,22 @@
+body{
+    background-color: yellow;
+}
+
+.block{
+    border: 1px solid red;
+    width: 500px; 
+    height: 100px; 
+    background: blue;
+}
+.block2{
+border: 1px solid red;
+height: 16px; 
+width: 150px;
+margin: 0 auto; 
+margin-top: 42px;
+background: red; 
+text-align: center;
+}
+p{
+    margin: 0px;
+}
