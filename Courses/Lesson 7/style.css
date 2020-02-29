@@ -1,0 +1,47 @@
+
+.container{
+    height: 480px;
+    width: 480px;
+    background-color: dimgray;
+    position: relative;
+    margin: 0 auto;
+
+}
+.block{
+    height: 100px;
+    width: 100px;
+    background-color: floralwhite;
+    margin: 10px;
+    position: absolute;
+    /* border: 1px solid black; */
+}
+.block2{
+    left: 120px;
+}
+.block3{
+    left: 240px;
+}
+.block4{
+    left: 360px;
+}
+.block5{
+    top: 120px;
+}
+.block6{
+    top: 120px;
+    left: 120px;
+}
+.block7{
+    top: 240px;
+}
+.block8{
+    top: 240px;
+    left: 240px;
+}
+.block9{
+    top: 360px;
+}
+.block10{
+    top: 360px;
+    left: 360px;
+}
