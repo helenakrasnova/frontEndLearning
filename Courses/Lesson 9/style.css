@@ -1,0 +1,35 @@
+.container{
+    height: 290px;
+    width: 290px;
+    border-radius: 50%;
+}
+.button {
+    /* border: 1px solid red; */
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    background-color: #95c11f;
+    box-shadow: 0 0 5px 10px #95c11f;
+    margin: 20px;
+}
+.image {
+    display: inline-block;
+    border-radius: 50%;
+    margin: 15px 25px;
+    padding: 15px 20px;
+    position: absolute;
+    top: 17%;
+    left: 12%;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0 0 5px 10px white;
+}
+
+img {
+    width: 50%;
+    position: absolute;
+    top: 20%;
+    left: 23%;
+}

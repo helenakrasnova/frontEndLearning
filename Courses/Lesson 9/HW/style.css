@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    font-family: "Open Sans", Sans-serif;
+    font-weight: bold;
+}
+
+.navigation__inform {
+    text-decoration: none;
+    color: #329FF1;
+    padding-top: 3rem;
+}
+
+.tel {
+    color: #1C3647;
+    padding-top: 3rem;
+}
+
+header {
+    width: 100%;
+    height: 7rem;
+    background-color: white;
+}
+
+main {
+    height: 32rem;
+    background-image: url(background4.jpg);
+    width: 100%;
+    background-size: cover;
+    background-color: rgba(28, 147, 226, 0.5);
+    opacity: 0.7;
+}
+
+.header__logo {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header__logo img {
+    height: 4rem;
+    padding-top: 1.5rem;
+}
+
+.main__columns {
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.main__welcome1, .main__welcome2 {
+    width: 50%;
+    height: 32rem;
+    /* border: 1px solid black; */
+}
+
+h1 {
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    line-height: 4rem;
+    padding-right: 3.5rem;
+    padding-top: 2rem;
+}
+
+h2 {
+    font-size: 1rem;
+    line-height: 2rem;
+    padding-right: 3.5rem;
+}
+
+.main__welcome1 {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.main__welcome2 {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: flex-end;
+}
+
+.main__button {
+    height: 2.5rem;
+    width: 12rem;
+    border: 1px solid white;
+    background-color: white;
+    color: #329FF1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 18rem;
+    margin-top: 1rem;
+}
+
+.main__welcome1 a {
+    text-decoration: none;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.main__form {
+    box-shadow: 0px 0px 40px 1px rgba(0, 81, 147, 0.59);
+    height: 30rem;
+    width: 70%;
+    background-color: rgba(236, 237, 239, 0.65);
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column;
+}
+
+.recall {
+    color: black;
+    font-size: 1.4rem;
+}
+
+.fillin {
+    color: black;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.main__form p {
+    padding-top: 1.5rem;
+    padding-left: 2.5rem;
+}
+
+input.text {
+    width: 124%;
+    height: 1.5rem;
+    padding:.75em;
+    /* padding: 5px 10px 5px 10px; */
+    /* border: 1px solid #999; */
+    border: 0;
+}
+textarea.text2{
+    width: 124%;
+    height: 6rem;
+    font-family: sans-serif;
+    border: 0;
+    padding:.75em;
+}
+.input__call{
+    height: 2.3rem;
+    width: 13rem;
+    border: 1px solid white;
+    background-color: white;
+    color: #329FF1;
+    font-size: 1.05rem;
+}
