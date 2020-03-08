@@ -37,6 +37,7 @@ main {
 .header__logo {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .header__logo img {
