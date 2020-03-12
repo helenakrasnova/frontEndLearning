@@ -1,7 +1,6 @@
 let operand1 = "";
 let operand2 = "";
 let operator;
-
 function updateDisplay(newValue) {
     let currentDisplayValue = document.getElementsByClassName("display")[0].innerHTML;
     currentDisplayValue = currentDisplayValue + newValue;
@@ -57,8 +56,6 @@ function calculateResult() {
 function equalButtonClicked(event) {
     let result = calculateResult();
     setDisplay(result);
-
-
 }
 function clearDisplayClicked(event) {
     setDisplay("");
