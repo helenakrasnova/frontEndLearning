@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    margin: 0 auto;
+    width: 1192px;
+    height: 481px;
+    background-color: #252726;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.main {
+    width: 855px;
+    height: 432px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin-left: -5px;
+    margin-bottom: 5px;
+}
+
+.main__left {
+    height: inherit;
+    width: 442px;
+}
+
+.line {
+    height: 74px;
+    width: 3px;
+    background-color: black;
+    margin-top: 102px;
+    margin-left: 36px;
+    position: absolute;
+}
+
+h1 {
+    font-weight: 1000;
+    font-size: 32px;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: 102px;
+    margin-left: 54px;
+    letter-spacing: -2.5px;
+    line-height: 35px;
+}
+
+.short {
+    color: #F29423;
+}
+
+h2 {
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 100;
+    margin-top: 31px;
+    margin-left: 36px;
+    line-height: 19px;
+    letter-spacing: 1.24px;
+}
+
+a.ref__button {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.button {
+    width: 117px;
+    height: 37px;
+    border: 1px solid black;
+    margin-left: 36px;
+    margin-top: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.18px;
+}
+
+.main__right {
+    height: inherit;
+    width: 413px;
+    background-image: url(pic.png);
+}
+
+.navigation {
+    width: 200px;
+    height: 432px;
+    margin-right: -2px;
+}
+
+.logo {
+    width: inherit;
+    height: 79px;
+    background-image: url(logo.png);
+    margin-top: 9px;
+}
+
+.block {
+    width: inherit;
+    height: 49px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 71px;
+    margin-bottom: -50px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.3px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+a:hover {
+    color: #F29423;
+}

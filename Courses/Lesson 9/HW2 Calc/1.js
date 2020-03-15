@@ -67,3 +67,4 @@ function clearState() {
     operator = "";
 }
 
+console.log();
