@@ -82,6 +82,7 @@ a.ref__button {
     align-items: center;
     justify-content: center;
     letter-spacing: 0.18px;
+    position: absolute;
 }
 
 .main__right {
