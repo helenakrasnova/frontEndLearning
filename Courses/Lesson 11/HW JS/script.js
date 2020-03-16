@@ -88,6 +88,12 @@
 // getDayOfTheWeek(num);
 
 
-function pow(x,n){
-    
+function pow(x, n) {
+    let initialValue = x;
+    for (let i = 1; i < n; i++) {
+        x *= initialValue;
+    }
+    return x;
 }
+let result = pow(3, 5);
+alert(result);
