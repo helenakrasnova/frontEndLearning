@@ -88,12 +88,32 @@
 // getDayOfTheWeek(num);
 
 
-function pow(x, n) {
-    let initialValue = x;
-    for (let i = 1; i < n; i++) {
-        x *= initialValue;
+// function pow(x, n) {
+//     let initialValue = x;
+//     for (let i = 1; i < n; i++) {
+//         x *= initialValue;
+//     }
+//     return x;
+// }
+// let result = pow(3, 5);
+// alert(result);
+
+
+// function pickIt(arr) {
+//     let odd = [], even = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] % 2 === 0) {
+//             even.push(arr[i]);
+//         }
+//         else if (arr[i] % 2 != 0) {
+//             odd.push(arr[i]);
+//         }
+//     }
+//     return [odd, even];
+// }
+let num = [10, 20, 30, 50, 235, 3000];
+function giveNumbers(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if ()
     }
-    return x;
 }
-let result = pow(3, 5);
-alert(result);
