@@ -5,7 +5,7 @@
 
 .content {
     max-width: 1500px;
-    height: 6364px;
+    height: 6314px;
     display: flex;
     flex-direction: column;
     font-family: 'Paragon', arial;
@@ -411,7 +411,58 @@ nav a:hover {
 
 .projects {
     max-width: inherit;
-    height: 600px;
+    height: 550px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.big-img {
+    width: 50%;
+}
+
+.small-img {
+    width: 25%;
+}
+
+.big-img.img-1 {
+    background-image: url(img/projects1.jpg);
+    background-repeat: no-repeat;
+}
+
+.big-img.img-2 {
+    background-image: url(img/projects2.jpg);
+    background-repeat: no-repeat;
+}
+
+.small-img.img-3 {
+    background-image: url(img/projects3.jpg);
+    background-repeat: no-repeat;
+}
+
+.small-img.img-4 {
+    background-image: url(img/projects4.jpg);
+    background-repeat: no-repeat;
+}
+
+.small-img.img-5 {
+    background-image: url(img/projects5.jpg);
+    background-repeat: no-repeat;
+}
+
+.small-img.img-6 {
+    background-image: url(img/projects6.jpg);
+    background-repeat: no-repeat;
+}
+
+.picture {
+    height: 340px;
+    width: 100%;
+}
+
+.picture-small {
+    height: 262px;
+    width: 100%;
 }
 
 .more {
@@ -494,7 +545,7 @@ nav a:hover {
 
 .tradein__heading {
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     line-height: 80px;
@@ -520,6 +571,7 @@ nav a:hover {
     justify-content: center;
     right: -140px;
     position: absolute;
+    top: -40px;
 }
 
 .tradein .filter a {
@@ -527,7 +579,8 @@ nav a:hover {
     top: 5150px;
     position: absolute;
 }
-.tradein__heading img{
+
+.tradein__heading img {
     margin-right: 15px;
     width: 45px;
 }
@@ -564,6 +617,39 @@ nav a:hover {
 .contactus__text {
     line-height: 30px;
 }
+
+
+.search__column p {
+    padding-top: 1px;
+    padding-left: 1px;
+}
+
+input.text {
+    width: 124%;
+    height: 1.5rem;
+    padding:.75em;
+    border: 0;
+}
+textarea.text2{
+    width: 124%;
+    height: 6rem;
+    font-family: sans-serif;
+    border: 0;
+    padding:.75em;
+}
+.input__call{
+    height: 40px;
+    width: 130px;
+    background-color: #f6ae48;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    /* outline: 0 !important; */
+    border: 0;
+}
+
+
 
 footer {
     height: 90px;
