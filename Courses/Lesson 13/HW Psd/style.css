@@ -411,60 +411,53 @@ nav a:hover {
 
 .projects {
     max-width: inherit;
-    height: 550px;
+    height: 600px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 .big-img {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 340px;
     width: 50%;
 }
 
 .small-img {
+    height: 260px;
     width: 25%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
 }
 
-.big-img.img-1 {
+.img-1 {
     background-image: url(img/projects1.jpg);
-    background-repeat: no-repeat;
 }
 
-.big-img.img-2 {
+.img-2 {
     background-image: url(img/projects2.jpg);
-    background-repeat: no-repeat;
 }
 
-.small-img.img-3 {
+.img-3 {
     background-image: url(img/projects3.jpg);
-    background-repeat: no-repeat;
 }
 
-.small-img.img-4 {
+.img-4 {
     background-image: url(img/projects4.jpg);
-    background-repeat: no-repeat;
 }
 
-.small-img.img-5 {
+.img-5 {
     background-image: url(img/projects5.jpg);
-    background-repeat: no-repeat;
 }
 
-.small-img.img-6 {
+.img-6 {
     background-image: url(img/projects6.jpg);
-    background-repeat: no-repeat;
 }
-
-.picture {
-    height: 340px;
-    width: 100%;
+.img-1:hover, .img-2:hover, .img-3:hover, .img-4:hover, .img-5:hover, .img-6:hover{
+    background-image: initial;
+    background-color: #f6ae48;
 }
-
-.picture-small {
-    height: 262px;
-    width: 100%;
-}
-
 .more {
     display: flex;
     justify-content: center;
@@ -627,11 +620,13 @@ nav a:hover {
     font-weight: bold;
     font-size: 15px;
 }
-form{
+
+form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 input, textarea {
     background-color: rgba(0, 0, 0, 0);
     border: 2px solid white;
@@ -641,15 +636,18 @@ input.text1 {
     width: 246px;
     height: 30px;
 }
-input.text2{
+
+input.text2 {
     width: 496px;
     height: 30px;
 }
-textarea.text3{
+
+textarea.text3 {
     width: 496px;
     height: 148px;
 }
-.input__call{
+
+.input__call {
     width: 149px;
     height: 50px;
     font-family: Arial, Helvetica, sans-serif;
@@ -664,15 +662,18 @@ textarea.text3{
     align-items: center;
     margin-left: 20px;
 }
-::placeholder{
+
+::placeholder {
     color: white;
     font-weight: bold;
 }
-.fillin{
+
+.fillin {
     font-weight: initial;
     font-size: 13px;
     margin-top: 10px;
 }
+
 footer {
     height: 90px;
     width: inherit;
