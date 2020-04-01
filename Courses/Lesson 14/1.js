@@ -182,10 +182,10 @@
 // let second = prompt('2');
 // let arr1 = [];
 // let arr2 = [];
-// for (i = 0; i < first.length; i++) {
+// for (let i = 0; i < first.length; i++) {
 //     arr1.push(parseInt(first[i]));
 // }
-// for (i = 0; i < second.length; i++) {
+// for (let i = 0; i < second.length; i++) {
 //     arr2.push(parseInt(second[i]));
 // }
 // function findMaxNumber(a, b) {
@@ -204,7 +204,7 @@
 //task24
 // let number = prompt();
 // let arr = [];
-// for (i = 0; i < number.length; i++) {
+// for (let i = 0; i < number.length; i++) {
 //     arr.push(parseInt(number[i]));
 // }
 // let a = arr[0] * arr[0];
@@ -212,3 +212,166 @@
 // let c = arr[2] * arr[2];
 // let d = arr[3] * arr[3];
 // console.log(`${a}${b}${c}${d}`);
+//task25a
+// let arr = [];
+// let a;
+// do {
+//     a = prompt('введите число');
+//     let b = parseInt(a);
+//     if (b && b > 0) {
+//         arr.push(b);
+//     }
+
+// } while (a !== 'STOP' && a !== '0');
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 === 0 && arr[i] % 4 === 0) {
+//         console.log(arr[i])
+//     }
+// }
+//task25b
+// let arr = [];
+// let a;
+// let arr2 = [];
+// let c = 0;
+// do {
+//     a = prompt('введите число');
+//     let b = parseInt(a);
+//     if (b && b > 0) {
+//         arr.push(b);
+//     }
+
+// } while (a !== 'STOP' && a !== '0');
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > 0) {
+//         arr2.push(arr[i]);
+//         c = c + arr[i];
+//     }
+// }
+// console.log(arr2);
+// console.log(c);
+//task25c
+// let arr = [];
+// let a;
+// let arr2 = [];
+// do {
+//     a = prompt('введите число');
+//     let b = parseInt(a);
+//     if (b && b !== 0) {
+//         arr.push(b);
+//     }
+
+// } while (a !== 'STOP' && a !== '0');
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] <0) {
+//         arr2.push(arr[i]);
+//         console.log(arr[i]);
+//     }
+// }
+// console.log(arr2);
+//task26
+// let number = prompt('');
+// let arr = [];
+// let sum = 0;
+// let max = 0;
+// for (let i = 0; i < number.length; i++) {
+//     arr.push(parseInt(number[i]));
+// }
+// for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//     if (max < arr[i]) {
+//         max = arr[i];
+//     }
+// }
+// console.log(sum);
+// console.log(max);
+//task27
+// let number = prompt('');
+// let str = '';
+// for (let i = number.length-1; i >= 0; i--) {
+//     str+=number[i];
+// }
+// console.log(str);
+//task28   12345  52341
+// let number = prompt('');
+// let str = `${number[number.length - 1]}`;
+// for (let i = 1; i < number.length - 1; i++) {
+//     str += number[i];
+// }
+// str+=`${number[0]}`;
+// console.log(str);
+//task29
+// let result = [];
+// for (let i = 100; i <= 9999; i++) {
+//     let sum = 0;
+//     let str = i.toString();
+//     for (let j = 0; j < str.length; j++) {
+//         sum += parseInt(str[j]);
+//     }
+//     if (sum === 6) {
+//         result.push(i);
+//     }
+// }
+// console.log(result);
+//task30
+// let result = [];
+// for (let i = 100; i <= 9999; i++) {
+//     let sum = 0;
+//     let str = i.toString();
+//     sum = parseInt(str[0]) + parseInt(str[str.length - 1]);
+//     if (sum === 6) {
+//         result.push(i);
+//     }
+// }
+// console.log(result);
+//task31
+// let number = prompt('число');
+// let numeral = prompt('цифра');
+// let str = '';
+// for (let i = 0; i < number.length; i++) {
+//     if (number[i] != numeral) {
+//         str += number[i];
+//     }
+// }
+// console.log(str);
+//task32
+// let number1 = prompt('число1');
+// let number2 = prompt('число2');
+// let str = '';
+// for (let i = 0; i < number1.length; i++) {
+//     for (let j = 0; j < number2.length; j++) {
+//         if (number1[i] === number2[j]) {
+//             str += number1[i];
+//         }
+//     }
+// }
+// console.log(str);
+//task33
+let number1 = prompt('число1');
+let number2 = prompt('число2');
+let duplicatedNumbers = '';
+for (let i = 0; i < number1.length; i++) {
+    for (let j = 0; j < number2.length; j++) {
+        if (number1[i] === number2[j]) {
+            duplicatedNumbers += number1[i];
+        }
+    }
+}
+function removeDuplicatedNumbers(stringToAnalyze, duplicatedNumbers) {
+    let result = '';
+    for (let i = 0; i < stringToAnalyze.length; i++) {
+        let duplicateFound = false;
+        for (let j = 0; j < duplicatedNumbers.length; j++) {
+            if (stringToAnalyze[i] === duplicatedNumbers[j]) {
+                duplicateFound = true;
+            }
+        }
+        if (duplicateFound === false) {
+            result += stringToAnalyze[i];
+        }
+    }
+    return result;
+}
+let result1 = removeDuplicatedNumbers(number1, duplicatedNumbers);
+let result2 = removeDuplicatedNumbers(number2, duplicatedNumbers);
+
+console.log(result1, result2);
