@@ -346,32 +346,78 @@
 // }
 // console.log(str);
 //task33
-let number1 = prompt('число1');
-let number2 = prompt('число2');
-let duplicatedNumbers = '';
-for (let i = 0; i < number1.length; i++) {
-    for (let j = 0; j < number2.length; j++) {
-        if (number1[i] === number2[j]) {
-            duplicatedNumbers += number1[i];
-        }
-    }
-}
-function removeDuplicatedNumbers(stringToAnalyze, duplicatedNumbers) {
-    let result = '';
-    for (let i = 0; i < stringToAnalyze.length; i++) {
-        let duplicateFound = false;
-        for (let j = 0; j < duplicatedNumbers.length; j++) {
-            if (stringToAnalyze[i] === duplicatedNumbers[j]) {
-                duplicateFound = true;
-            }
-        }
-        if (duplicateFound === false) {
-            result += stringToAnalyze[i];
-        }
-    }
-    return result;
-}
-let result1 = removeDuplicatedNumbers(number1, duplicatedNumbers);
-let result2 = removeDuplicatedNumbers(number2, duplicatedNumbers);
+// let number1 = prompt('число1');
+// let number2 = prompt('число2');
+// let duplicatedNumbers = '';
+// for (let i = 0; i < number1.length; i++) {
+//     for (let j = 0; j < number2.length; j++) {
+//         if (number1[i] === number2[j]) {
+//             duplicatedNumbers += number1[i];
+//         }
+//     }
+// }
+// function removeDuplicatedNumbers(stringToAnalyze, duplicatedNumbers) {
+//     let result = '';
+//     for (let i = 0; i < stringToAnalyze.length; i++) {
+//         let duplicateFound = false;
+//         for (let j = 0; j < duplicatedNumbers.length; j++) {
+//             if (stringToAnalyze[i] === duplicatedNumbers[j]) {
+//                 duplicateFound = true;
+//             }
+//         }
+//         if (duplicateFound === false) {
+//             result += stringToAnalyze[i];
+//         }
+//     }
+//     return result;
+// }
+// let result1 = removeDuplicatedNumbers(number1, duplicatedNumbers);
+// let result2 = removeDuplicatedNumbers(number2, duplicatedNumbers);
 
-console.log(result1, result2);
+// console.log(result1, result2);
+//task34
+// let number;
+// do {
+//     number = +prompt('');
+// }
+// while (number >= 10 && number <= 3);
+// let str = '';
+// for (let i = 0; i < number; i++) {
+//     str += '*';
+//     console.log(str);
+// }
+//task35
+// let number;
+// do {
+//     number = +prompt('');
+// }
+// while (number >= 10 && number <= 3);
+// let str = '';
+// for (let i = number; i > 0; i--) {
+//     str = '';
+//     for (let j = 0; j < i; j++) {
+//         str += '*';
+//     }
+//     console.log(str);
+// }
+//task36
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+// let number;
+// do {
+    // number = +prompt('');
+// }
+// while (number > 10 || number < 3);
+// let str = '*';
+// let space;
+// for (let i = number; i > 0; i--) {
+//     space = '';
+//     for (let j = 0; j < i; j++) {
+//         space += ' ';
+//     }
+//     console.log(space + str);
+//     str += '**';
+// }
