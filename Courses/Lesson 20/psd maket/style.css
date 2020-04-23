@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    max-width: 100%;
+    height: 1650px;
+}
+
+@font-face {
+    font-family: 'Fontawesome-Webfont';
+    src: url(fonts/fontawesome-webfont.ttf);
+}
+
+@font-face {
+    font-family: 'Glyphicons-Halflings-Regular';
+    src: url(fonts/glyphicons-halflings-regular.ttf);
+}
+
+.field {
+    background-image: url(img/back.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    max-width: inherit;
+    height: 580px;
+    color: white;
+    font-family: 'Fontawesome-Webfont', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.field__h1 {
+    font-size: 80px;
+    letter-spacing: 8px;
+    padding: 10px 0px 20px 0px;
+    font-weight: bold;
+}
+h1{
+    flex-wrap: wrap;
+}
+
+.field__h4 {
+    font-size: 19px;
+    font-weight: lighter;
+    padding: 10px;
+}
+.portfolio{
+    max-width: inherit;
+    height: 770px;
+    background-color: pink;
+    text-align: center;
+}
+.block{
+    background-image: url(img/portfolio/folio01.png);
+    width: 360px;
+    height: 240px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 10px;
+}
+.portfolio__blocks{
+    width: 100%;
+    height: 770px;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.portfolio__h2{
+    color: #4a4a4a;
+    font-size: 40px;
+    font-family:  'Glyphicons-Halflings-Regular', sans-serif;
+}
