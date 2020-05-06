@@ -56,25 +56,25 @@
 // }
 // console.log(getSecondsToTomorrow());
 
-function formatDate(date) {
-    let now = new Date();
-    let nowDate = Math.round(now.getTime() / 1000);
-    let anotherDate = Math.round(date.getTime() / 1000);
-    let sec = nowDate - anotherDate;
-    if (sec < 1) {
-        return 'прямо сейчас';
-    }
-    else if (sec > 1 && sec < 60) {
-        return `${sec} сек. назад`;
-    }
-    else if (sec / 60 > 1 && sec / 3600 < 60) {
-        let min = sec / 60;
-        return `${min} мин. назад`;
-    }
-    else {
+// function formatDate(date) {
+//     let now = new Date();
+//     let nowDate = Math.round(now.getTime() / 1000);
+//     let anotherDate = Math.round(date.getTime() / 1000);
+//     let sec = nowDate - anotherDate;
+//     if (sec < 1) {
+//         return 'прямо сейчас';
+//     }
+//     else if (sec > 1 && sec < 60) {
+//         return `${sec} сек. назад`;
+//     }
+//     else if (sec / 60 > 1 && sec / 3600 < 60) {
+//         let min = sec / 60;
+//         return `${min} мин. назад`;
+//     }
+//     else {
 
-        let fullYear = date.getFullYear().toString().substring(2, 2);
-        let fullDate = `${date.getDate()}.${date.getMonth() + 1}.${fullYear} ${date.getHours()}:${date.getMinutes()}`;
-        return fullDate;
-    }
-}
+//         let fullYear = date.getFullYear().toString().substring(2, 2);
+//         let fullDate = `${date.getDate()}.${date.getMonth() + 1}.${fullYear} ${date.getHours()}:${date.getMinutes()}`;
+//         return fullDate;
+//     }
+// }
