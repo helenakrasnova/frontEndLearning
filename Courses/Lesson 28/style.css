@@ -1,0 +1,83 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+@font-face {
+    font-family: Montserrat-Bold; /* Имя шрифта */
+    src: url(fonts/Montserrat-Bold.ttf); /* Путь к файлу со шрифтом */
+   }
+   @font-face {
+    font-family: Montserrat-Regular; /* Имя шрифта */
+    src: url(fonts/Montserrat-Regular.ttf); /* Путь к файлу со шрифтом */
+   }
+.content{
+    width: 100%;
+    height: 5000px;
+}
+.main1 {
+    width: 100%;
+    height: 760px;
+}
+.main1-img{
+    position: absolute;
+    top: 600px;
+    left: 1100px;
+
+}
+.filter {
+    background-color: rgba(239, 240, 242, 0.99);
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.shadow{
+    background-color: #b2f2ee;
+}
+.header {
+    width: 80%;
+    height: 103px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+}
+.font1{
+    font-size: 50px;
+    color: #505050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Montserrat-Bold;
+    text-shadow: 6px 8px 6px rgba(202, 202, 204, 0.99);
+}
+.space-button{
+    width: 100%;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    }
+a{
+    text-decoration: none;
+}
+.button{
+    text-transform: uppercase;
+    color: #3c3c3d;
+    border: 2px solid #777879;
+    width: 215px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat-Regular;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 5px;
+}

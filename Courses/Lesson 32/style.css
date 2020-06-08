@@ -1,0 +1,13 @@
+body{
+    background: #ccc;
+}
+.block{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    color: blue;
+    margin-left: 0 auto;
+}
+.block p{
+    
+}
