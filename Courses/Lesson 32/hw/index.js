@@ -141,3 +141,12 @@ library.addBookForReader('1111-xxx-1111', '3-3333-3333-3');
 
 // }
 
+
+//folder structure
+
+// models - book.js reader.js
+// services
+// initialData
+// tests
+//root index.js indexhtml. library 
+

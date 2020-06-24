@@ -7,16 +7,17 @@ export class Library {
         let readersService = new ReadersService();
         this.readers = readersService.loadReaders();
         this.books = booksService.load();
-
-
     }
+
     addBook(book) {
         let bookStatus = book.isValid();
-        if (bookStatus.isValid === true) {
+        if (bookStatus.valid === true) {
             this.books.push(book);
+            return true;
         }
-
+        return false;
     }
+
     deleteBook(id) {
         let index = this.books.findIndex((value) => value.id === id);
         if (index > -1) {
@@ -27,16 +28,19 @@ export class Library {
             return false;
         }
     }
+
     getById(id) {
         let index = this.books.findIndex((value) => value.id === id);
         return this.books[index];
     }
+
     getAll() {
         return this.books;
     }
     // searchByTitle(title){
     //     return this.books.filter((value) => value.title.includes(title));
     // }
+
     searchByTitle(title) {
         let result = [];
         for (let i = 0; i < this.books.length; i++) {
@@ -46,9 +50,11 @@ export class Library {
         }
         return result;
     }
+
     searchByPublishDate(publishDate) {
         let result = [];
         for (let i = 0; i < this.books.length; i++) {
+
             if (this.books[i].publishDate.getFullYear() === publishDate.getFullYear() &&
                 this.books[i].publishDate.getMonth() === publishDate.getMonth() &&
                 this.books[i].publishDate.getDate() === publishDate.getDate()) {
@@ -57,9 +63,11 @@ export class Library {
         }
         return result;
     }
+
     searchByAuthors(authors) {
         return this.books.filter((value) => value.authors.includes(authors));
     }
+
     getAllSorted(order = 'asc') {
         let result = [];
         for (let i = 0; i < this.books.length; i++) {
@@ -74,7 +82,12 @@ export class Library {
         }
         return result;
     }
+
     addReader(reader) {
+        if (!reader) {
+            return false;
+        }
+
         try {
             reader.validate();
         } catch (error) {
@@ -84,28 +97,28 @@ export class Library {
         this.readers.push(reader);
         return true;
     }
+
     showReaders() {
         return this.readers;
     }
+
     addBookForReader(ticketNumber, id) {
-        let availableBooks = this.getAvaliableBooks();
-        for (let i = 0; i < availableBooks.length; i++) {
-            if (id != availableBooks[i].id) {
-                let existingBook = this.books.find(b => b.id === id);
-                if (!existingBook) {
-                    return false;
-                }
-                let existingReader = this.readers.find(r => r.ticketNumber === ticketNumber);
-                if (!existingReader) {
-                    return false;
-                }
-                existingReader.readersBooks.push(existingBook.id);
-                return true;
-            }
+        let availableBooks = this.getAvailableBooks();
+        if (!availableBooks || availableBooks.length === 0) {
+            return false;
         }
-
-
+        let existingBook = availableBooks.find(b => b.id === id);
+        if (!existingBook) {
+            return false;
+        }
+        let existingReader = this.readers.find(r => r.ticketNumber === ticketNumber);
+        if (!existingReader) {
+            return false;
+        }
+        existingReader.readersBooks.push(existingBook.id);
+        return true;
     }
+
     showReadersBooks(ticketNumber) {
         let result = [];
         let existingReader = this.readers.find(r => r.ticketNumber === ticketNumber);
@@ -118,7 +131,8 @@ export class Library {
         };
         return result;
     }
-    getAvaliableBooks() {
+
+    getAvailableBooks() {
         let takenBooks = [];
         let availableBooks = [];
         for (let i = 0; i < this.readers.length; i++) {

@@ -35,7 +35,7 @@ export class Book {
             newValidation.messages.push('publishDate is wrong');
         }
         if (newValidation.messages.length === 0) {
-            newValidation.isValid = true;
+            newValidation.valid = true;
         }
         return newValidation;
     }

@@ -1,6 +1,6 @@
 export class ValidationResult {
     constructor() {
-        this.isValid = false;
+        this.valid = false;
         this.messages = [];
     }
 }

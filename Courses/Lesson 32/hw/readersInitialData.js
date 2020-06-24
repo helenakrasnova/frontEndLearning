@@ -4,8 +4,7 @@ export const readersIntialData = `[
         "name": "john",
         "surname": "smith",
         "readersBooks": [
-            "2-2222-2222-2",
-            "3-3333-3333-3"
+            "2-2222-2222-2"
         ]
     },
     {
