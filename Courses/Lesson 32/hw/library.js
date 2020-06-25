@@ -1,5 +1,5 @@
-import { BooksService } from "./booksService.js";
-import { ReadersService } from "./readersService.js";
+import { BooksService } from "./services/booksService";
+import { ReadersService } from "./services/readersService.js";
 export class Library {
 
     constructor() {

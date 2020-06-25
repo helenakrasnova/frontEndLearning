@@ -11,7 +11,7 @@ export class Reader {
            throw new Error('ticketNumber is not valid');
         }
         if (!this.ticketNumber.match(ticketNumberRegExp)) {
-            throw new Error('ticketnumber is not correct formatted 1111-XXX-1111');
+            throw new Error('ticketNumber is not correct formatted 1111-XXX-1111');
         }
         if (!this.name) {
             throw new Error('name is not valid');

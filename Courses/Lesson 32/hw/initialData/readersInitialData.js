@@ -1,4 +1,4 @@
-export const readersIntialData = `[
+export const readersInitialData = `[
     {
         "ticketNumber": "1111-xxx-1111",
         "name": "john",

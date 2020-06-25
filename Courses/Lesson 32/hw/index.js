@@ -1,8 +1,8 @@
 'use strict'
 
-import { Book } from "./book.js";
+import { Book } from "./models/book";
 import { Library } from "./library.js";
-import { Reader } from "./reader.js";
+import { Reader } from "./models/reader.js";
 
 //ticketnumber и id уникальные
 

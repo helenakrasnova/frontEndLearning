@@ -1,6 +1,6 @@
-import { Library } from "./library.js";
-import { Book } from "./book.js";
-import { Reader } from "./reader.js";
+import { Library } from "../library";
+import { Book } from "../models/book";
+import { Reader } from "../models/reader";
 
 function createLibrary() {
     let library = new Library();
@@ -213,6 +213,41 @@ test('getAvailableBooks,  returns available books array', () => {
     expect(result.length).toBe(1);
 });
 
+test('addBookForReader, valid reader ticketNumber and invalid book id, returns  readers false', () => {
+    let testLibrary = createLibrary();
+    let testReader = createReader();
+    testLibrary.addReader(testReader);
+
+    let result = testLibrary.addBookForReader(testReader.ticketNumber, '1-1111-1111-2');
+
+    expect(result).toBeFalsy();
+});
+
+test('addBookForReader, valid reader ticketNumber and invalid book id, returns  readers false', () => {
+    let testLibrary = createLibrary();
+    let testReader = createReader();
+    testLibrary.addReader(testReader);
+    let testBook = createBook();
+    testLibrary.addBook(testBook);
+
+    let result = testLibrary.addBookForReader(testReader.ticketNumber, '6-6666-6666-6');
+
+    expect(result).toBeFalsy();
+});
+
+
+test('addBookForReader, invalid reader ticketNumber and valid book id, returns  readers false', () => {
+    let testLibrary = createLibrary();
+    let testReader = createReader();
+    let testBook = createBook();
+    testLibrary.addReader(testReader);
+    testLibrary.addBook(testBook);
+
+    let result = testLibrary.addBookForReader('', '1-1111-1111-2');
+
+    expect(result).toBeFalsy();
+});
+
 test('addBookForReader, valid reader ticketNumber and book id, returns  readers true', () => {
     let testLibrary = createLibrary();
     let testReader = createReader();
@@ -223,43 +258,6 @@ test('addBookForReader, valid reader ticketNumber and book id, returns  readers 
     let result = testLibrary.addBookForReader(testReader.ticketNumber, '1-1111-1111-2');
 
     expect(result).toBeTruthy();
-});
-
-test('addBookForReader, invalid reader ticketNumber and book id, returns  readers true', () => {
-    let testLibrary = createLibrary();
-    let testReader = createReader();
-    testReader.ticketNumber = '';
-    let testBook = createBook();
-    testLibrary.addReader(testReader);
-    testLibrary.addBook(testBook);
-
-    let result = testLibrary.addBookForReader(testReader.ticketNumber, '1-1111-1111-2');
-
-    expect(result).toBeFalsy();
-});
-
-test('addBookForReader, valid reader ticketNumber and invalid book id, returns  readers true', () => {
-    let testLibrary = createLibrary();
-    let testReader = createReader();
-    let testBook = createBook();
-    testBook.id = '';
-    testLibrary.addReader(testReader);
-    testLibrary.addBook(testBook);
-
-    let result = testLibrary.addBookForReader(testReader.ticketNumber, '1-1111-1111-2');
-
-    expect(result).toBeFalsy();
-});
-
-
-test('addBookForReader, valid reader ticketNumber and invalid book id, returns  readers true', () => {
-    let testLibrary = createLibrary();
-    let testReader = createReader();
-    testLibrary.addReader(testReader);
-
-    let result = testLibrary.addBookForReader(testReader.ticketNumber, '1-1111-1111-2');
-
-    expect(result).toBeFalsy();
 });
 
 test('showReadersBooks, valid reader ticketNumber, returns  existing books', () => {

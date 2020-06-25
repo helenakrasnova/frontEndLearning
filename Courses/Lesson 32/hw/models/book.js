@@ -1,4 +1,4 @@
-import { ValidationResult } from "./validationResult.js";
+import { ValidationResult } from "../models/validationResult";
 
 export class Book {
     constructor() {
