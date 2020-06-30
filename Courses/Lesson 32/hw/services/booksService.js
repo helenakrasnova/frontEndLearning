@@ -1,4 +1,4 @@
-import { initialData } from "../initialData/booksInitialData";
+import { initialData } from "../initialData/booksInitialData.js";
 
 export class BooksService {
     load() {

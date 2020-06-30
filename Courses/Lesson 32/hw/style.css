@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    min-height: 650px;
+    max-height: 2000px;
+    font-family: cursive;
+    /* background-color: aliceblue; */
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    color: #252967;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+header a img {
+    height: 69px;
+    margin-left: 20px;
+}
+
+header h3 {
+    margin-right: 20px;
+}
+
+.log-out, .add-book, .show-books, .form-row input[type=submit] {
+    min-width: 100px;
+    font-family: inherit;
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #4676d7;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.add-book {
+    background: #95c11f;
+    margin: 10px;
+}
+
+.show-books {
+    background: #901919;
+    margin: 10px;
+    display: none;
+}
+
+.log-out:hover, .form-row input[type=submit]:hover {
+    background: #1d49aa;
+}
+
+.add-book:hover {
+    background: #5F7D0A;
+}
+
+.show-books:hover {
+    background: #5E0808;
+}
+
+.log-out:focus, .form-row input[type=submit]:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
+}
+
+.add-book:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #C4E079;
+}
+
+.show-books:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #C86D6D;
+}
+
+table {
+    font-family: cursive;
+    font-size: 14px;
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+}
+
+th {
+    background: #AFCDE7;
+    color: white;
+    padding: 10px 20px;
+}
+
+td, th {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+
+td {
+    background: #D8E6F3;
+}
+
+
+.books-form {
+    max-width: 350px;
+    margin: 50px auto 0;
+    padding: 20px;
+    background: #fffdee;
+    border: 10px solid transparent;
+    border-image: 10 repeating-linear-gradient(135deg, #0075aa, #0075aa 10px, transparent 10px, transparent 20px, #FBCFDF 20px, #FBCFDF 30px, transparent 30px, transparent 40px);
+    color: #605756;
+    display: none;
+}
+
+.form-row {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 0 10px;
+    line-height: 35px;
+    border-width: 0;
+    outline: none;
+    background: transparent url(https://html5book.ru/wp-content/uploads/2016/12/bg-form.png) bottom left repeat-x;
+    background-size: 8px 35px;
+}
+
+input, textarea {
+    outline: none;
+    border: none;
+   background-color: #fffdee;
+    }
+
+.form-row textarea {
+    width: 100%;
+    padding: 0 10px;
+    line-height: 35px;
+    border-width: 0;
+    outline: none;
+    background: transparent url(https://html5book.ru/wp-content/uploads/2016/12/bg-form.png) bottom left repeat-x;
+    background-size: 8px 35px;
+}
+
+.form-row textarea {
+    background-attachment: local;
+    background-repeat: repeat;
+    resize: none;
+}
+
+.form-row select {
+    display: block;
+    color: #444;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #252967;
+    border-radius: .5em;
+}
+
+footer {
+    width: 100%;
+    height: 70px;
+    color: #252967;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+}

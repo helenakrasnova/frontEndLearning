@@ -6,11 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="module" src="index.js"></script>
+    <!-- <script type="module" src="models/book.js"></script>
+    <script type="module" src="models/reader.js"></script> -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
+        <header>
+            <a href="#"><img src="logo.png" alt=""></a>
+            <h3>name
+                <button class="log-out">log-out</button>
+            </h3>
+        </header>
+        <button class="add-book">add book</button>
+        <button class="show-books">show books</button>
+        <div class="table">
+            <table id="booksTable">
+                <thead>
+                    <tr>
+                        <th>title</th>
+                        <th>id</th>
+                        <th>authors</th>
+                        <th>genre</th>
+                        <th>publisher</th>
+                        <th>publishDate</th>
+                        <th>description</th>
+                        <th>registrationDate</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        
+        <form action="#" class="books-form">
 
+            <div class="form-row">
+                <label for="title">title</label>
+                <input type="text" name="title" id="title">
+            </div>
+
+            <div class="form-row">
+                <label for="authors">authors</label>
+                <input type="text" name="authors" id="authors">
+            </div>
+
+            <div class="form-row">
+                <label for="genres">genres</label>
+                <select name="genres" multiple id="genres">
+                    <option value="horror" selected>horror</option>
+                    <option value="detective">detective</option>
+                    <option value="roman">roman</option>
+                    <option value="classic">classic</option>
+                    <option value="drama">drama</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="publisher">publisher</label>
+                <input type="text" name="publisher" id="publisher">
+            </div>
+
+
+            <div class="form-row">
+                <label for="publishDate">publishDate</label>
+                <input type="date" name="publishDate" id="publishDate">
+            </div>
+
+            <div class="form-row">
+                <label for="description">description</label>
+                <input type="textarea" name="description" id="description">
+            </div>
+
+            <div class="form-row">
+                <label for="registrationDate">registrationDate</label>
+                <input type="date" name="registrationDate" id="registrationDate">
+            </div>
+
+            <div class="form-row">
+                <input type="submit" value="send">
+            </div>
+        </form>
+        <footer>
+            ©2020 Google Privacy Policy Terms of Service
+        </footer>
     </div>
 </body>
 

@@ -1,4 +1,4 @@
-import{readersInitialData } from "../initialData/readersInitialData";
+import{readersInitialData } from "../initialData/readersInitialData.js";
 
 export class ReadersService {
     loadReaders() {

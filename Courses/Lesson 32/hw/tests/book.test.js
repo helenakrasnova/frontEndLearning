@@ -1,4 +1,4 @@
-import { Book } from "../models/book";
+import { Book } from "../models/book.js";
 
 function createBook() {
     let book1 = new Book();

@@ -28,7 +28,7 @@ export const initialData = `[
         ],
         "publisher": "Times",
         "publishDate": "2001-11-03T22:00:00.000Z",
-        "description": "[kfkfkfkfkfkffkfkfkfk]",
+        "description": "kfkfkfkfkfkffkfkfkfk",
         "registrationDate": "2019-06-04T21:00:00.000Z"
     },
     {
@@ -44,7 +44,7 @@ export const initialData = `[
         ],
         "publisher": "Pops",
         "publishDate": "2003-05-06T21:00:00.000Z",
-        "description": "[fcndxnxb]",
+        "description": "fcndxnxb",
         "registrationDate": "2020-01-31T21:00:00.000Z"
     }
 ]`

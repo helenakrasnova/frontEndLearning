@@ -1,4 +1,4 @@
-import { BooksService } from "./services/booksService";
+import { BooksService } from "./services/booksService.js";
 import { ReadersService } from "./services/readersService.js";
 export class Library {
 

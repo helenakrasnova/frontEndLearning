@@ -1,6 +1,6 @@
 'use strict'
 
-import { Book } from "./models/book";
+import { Book } from "./models/book.js";
 import { Library } from "./library.js";
 import { Reader } from "./models/reader.js";
 
@@ -13,59 +13,59 @@ import { Reader } from "./models/reader.js";
 //readers and books services меняем на http запросы  вместо загрузки из джейсона
 
 //DOM
-export let sum = (a, b) => a + b;
 
-let book1 = new Book();
-book1.title = 'murder';
-book1.id = '1-1111-1111-2';
-book1.authors = ['agata', 'redberry'];
-book1.genre = ['classic', 'detective'];
-book1.publisher = 'ACT';
-book1.publishDate = new Date(2000, 11, 5);
-book1.description = 'blablabla';
-book1.registrationDate = new Date(2020, 2, 6);
 
-let book2 = new Book();
-book2.title = 'flowers in London';
-book2.id = '2-2222-2222-3';
-book2.authors = ['doyle', 'gogol'];
-book2.genre = ['horror', 'roman'];
-book2.publisher = 'Times';
-book2.publishDate = new Date(2001, 10, 4);
-book2.description = '[kfkfkfkfkfkffkfkfkfk]';
-book2.registrationDate = new Date(2019, 5, 5);
+// let book1 = new Book();
+// book1.title = 'murder';
+// book1.id = '1-1111-1111-2';
+// book1.authors = ['agata', 'redberry'];
+// book1.genre = ['classic', 'detective'];
+// book1.publisher = 'ACT';
+// book1.publishDate = new Date(2000, 11, 5);
+// book1.description = 'blablabla';
+// book1.registrationDate = new Date(2020, 2, 6);
 
-let book3 = new Book();
-book3.title = 'beautiful flowers';
-book3.id = '3-3333-3333-4';
-book3.authors = ['pushkin', 'gogol'];
-book3.genre = ['drama', 'roman'];
-book3.publisher = 'Pops';
-book3.publishDate = new Date(2003, 4, 7);
-book3.description = '[fcndxnxb]';
-book3.registrationDate = new Date(2020, 1, 1);
+// let book2 = new Book();
+// book2.title = 'flowers in London';
+// book2.id = '2-2222-2222-3';
+// book2.authors = ['doyle', 'gogol'];
+// book2.genre = ['horror', 'roman'];
+// book2.publisher = 'Times';
+// book2.publishDate = new Date(2001, 10, 4);
+// book2.description = 'kfkfkfkfkfkffkfkfkfk';
+// book2.registrationDate = new Date(2019, 5, 5);
+
+// let book3 = new Book();
+// book3.title = 'beautiful flowers';
+// book3.id = '3-3333-3333-4';
+// book3.authors = ['pushkin', 'gogol'];
+// book3.genre = ['drama', 'roman'];
+// book3.publisher = 'Pops';
+// book3.publishDate = new Date(2003, 4, 7);
+// book3.description = 'fcndxnxb';
+// book3.registrationDate = new Date(2020, 1, 1);
 
 let library = new Library();
 //library.books.push
-library.addBook(book1);
-library.addBook(book2);
-library.addBook(book3);
+// library.addBook(book1);
+// library.addBook(book2);
+// library.addBook(book3);
 
 // let res = library.deleteBook('222222');
 // res ? alert('deleted') : alert('false');
 
-let reader1 = new Reader();
-reader1.ticketNumber = '1111-xxx-1111';
-reader1.name = 'john';
-reader1.surname = 'smith';
-let reader2 = new Reader();
-reader2.ticketNumber = '2222-ccc-2222';
-reader2.name = 'ryan';
-reader2.surname = 'kelly';
-let reader3 = new Reader();
-reader3.ticketNumber = '3333-mmm-3333';
-reader3.name = 'kate';
-reader3.surname = 'pitt';
+// let reader1 = new Reader();
+// reader1.ticketNumber = '1111-xxx-1111';
+// reader1.name = 'john';
+// reader1.surname = 'smith';
+// let reader2 = new Reader();
+// reader2.ticketNumber = '2222-ccc-2222';
+// reader2.name = 'ryan';
+// reader2.surname = 'kelly';
+// let reader3 = new Reader();
+// reader3.ticketNumber = '3333-mmm-3333';
+// reader3.name = 'kate';
+// reader3.surname = 'pitt';
 // library.deleteBook('111111');
 // console.log(library.getAll());
 //  console.log(library.getById('111111'))
@@ -77,13 +77,13 @@ reader3.surname = 'pitt';
 // console.log(library.getAllSorted());
 // console.log(library.getAllSorted('asc'));
 // console.log(library.getAllSorted('desc'));
-library.addReader(reader1);
-library.addReader(reader2);
-library.addReader(reader3);
-library.addBookForReader('1111-xxx-1111', '2-2222-2222-2');
-library.addBookForReader('2222-ccc-2222', '1-1111-1111-1');
-library.addBookForReader('3333-mmm-3333', '3-3333-3333-3');
-library.addBookForReader('1111-xxx-1111', '3-3333-3333-3');
+// library.addReader(reader1);
+// library.addReader(reader2);
+// library.addReader(reader3);
+// library.addBookForReader('1111-xxx-1111', '2-2222-2222-2');
+// library.addBookForReader('2222-ccc-2222', '1-1111-1111-1');
+// library.addBookForReader('3333-mmm-3333', '3-3333-3333-3');
+// library.addBookForReader('1111-xxx-1111', '3-3333-3333-3');
 // console.log(reader1);
 // console.log(library.showReadersBooks('333'));
 
@@ -150,3 +150,51 @@ library.addBookForReader('1111-xxx-1111', '3-3333-3333-3');
 // tests
 //root index.js indexhtml. library 
 
+
+
+function addRow(book, tbody) {
+    let row = tbody.insertRow(0);
+
+    for (let i = 0; i < 9; i++) {
+        row.insertCell(i);
+    }
+    row.cells[0].innerHTML = book.title;
+    row.cells[1].innerHTML = book.id;
+    row.cells[2].innerHTML = book.authors;
+    row.cells[3].innerHTML = book.genre;
+    row.cells[4].innerHTML = book.publisher;
+    row.cells[5].innerHTML = book.publishDate.toDateString();
+    row.cells[6].innerHTML = book.description;
+    row.cells[7].innerHTML = book.registrationDate.toDateString();
+}
+
+function renderBookTable() {
+    let tbody = document.createElement('tbody');
+
+
+    for (let i = 0; i < library.books.length; i++) {
+        addRow(library.books[i], tbody);
+    }
+
+    let booksTable = document.getElementById('booksTable');
+    booksTable.append(tbody);
+}
+renderBookTable();
+
+
+let addBook = document.getElementsByClassName('add-book');
+addBook[0].onclick = function () {
+    let table = document.getElementsByClassName('table');
+    table[0].style = 'display:none';
+    addBook[0].style='display:none';
+    let showBooks = document.getElementsByClassName('show-books');
+    showBooks[0].style = 'display:block';
+    let booksForm = document.getElementsByClassName('books-form');
+    booksForm[0].style = 'display:block'
+    showBooks[0].onclick = function(){
+        table[0].style = 'display:block';
+        showBooks[0].style = 'display:none';
+        addBook[0].style='display:block';
+        booksForm[0].style = 'display:none'
+    }
+}

@@ -1,6 +1,6 @@
-import { Library } from "../library";
-import { Book } from "../models/book";
-import { Reader } from "../models/reader";
+import { Library } from "../library.js";
+import { Book } from "../models/book.js";
+import { Reader } from "../models/reader.js";
 
 function createLibrary() {
     let library = new Library();

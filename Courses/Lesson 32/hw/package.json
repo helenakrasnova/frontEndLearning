@@ -1,7 +1,6 @@
 {
   "name": "library",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest -o",
@@ -13,5 +12,10 @@
     "@babel/preset-env": "^7.10.3",
     "babel-jest": "^26.0.1",
     "jest": "^26.0.1"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "description": ""
 }
