@@ -16,6 +16,8 @@
   "directories": {
     "test": "tests"
   },
-  "dependencies": {},
+  "dependencies": {
+    "uuid": "^8.2.0"
+  },
   "description": ""
 }

@@ -14,14 +14,14 @@ export class Book {
     isValid() {
 
         let newValidation = new ValidationResult();
-        let isbnRegExp = /\d-\d{4}-\d{4}-\d/g;
+         let isbnRegExp = /\d-\d{4}-\d{4}-\d/g;
 
         if (!this.title) {
             newValidation.messages.push('title is not filled');
         }
-        if (!this.id.match(isbnRegExp)) {
-            newValidation.messages.push('id is not correct formatted X-XXXX-XXXX-X');
-        }
+         if (!this.id.match(isbnRegExp)) {
+             newValidation.messages.push('id is not correct formatted X-XXXX-XXXX-X');
+         }
         if (!this.id) {
             newValidation.messages.push('id is not filled');
         }

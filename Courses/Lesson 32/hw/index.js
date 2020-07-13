@@ -1,5 +1,6 @@
 'use strict'
 
+// import { v4 as uuidv4 } from 'uuid.js';
 import { Book } from "./models/book.js";
 import { Library } from "./library.js";
 import { Reader } from "./models/reader.js";
@@ -166,9 +167,33 @@ function addRow(book, tbody) {
     row.cells[5].innerHTML = book.publishDate.toDateString();
     row.cells[6].innerHTML = book.description;
     row.cells[7].innerHTML = book.registrationDate.toDateString();
+    let buttonEdit = document.createElement('button');
+    buttonEdit.className = 'button-edit';
+    buttonEdit.innerHTML = 'edit';
+    buttonEdit.setAttribute('data-id', book.id);
+    row.cells[8].append(buttonEdit);
+    
+    let buttonDelete = document.createElement('button');
+    buttonDelete.className = 'button-delete';
+    buttonDelete.innerHTML = 'delete';
+    buttonDelete.setAttribute('data-id', book.id);
+    row.cells[8].append(buttonDelete);
+    buttonDelete.onclick = function (event) {
+        let id = event.target.dataset['id'];
+        library.deleteBook(id);
+        let table = document.getElementById('booksTable');
+
+        for (let i = 0; i < table.rows.length; i++) {
+            if (table.rows[i].cells[1].innerHTML === id) {
+                table.deleteRow(i);
+                break;
+            }
+        }
+    }
 }
 
 function renderBookTable() {
+
     let tbody = document.createElement('tbody');
 
 
@@ -184,17 +209,52 @@ renderBookTable();
 
 let addBook = document.getElementsByClassName('add-book');
 addBook[0].onclick = function () {
+    showForm();
+    let showBooks = document.getElementsByClassName('show-books');
+    showBooks[0].onclick = function () {
+        showTable();
+    }
+}
+let sendBook = document.getElementsByClassName('send-book');
+sendBook[0].onclick = function (event) {
+    event.preventDefault();
+    let form = document.getElementById('booksForm');
+    let addedBook = new Book();
+    addedBook.title = form.elements['title'].value;
+    addedBook.id = '4-4444-4444-4';
+    addedBook.authors = form.elements['authors'].value;
+    addedBook.genre = Array.from(form.elements['genres'].selectedOptions)
+        .map(option => option.value);
+    addedBook.publisher = form.elements['publisher'].value;
+    addedBook.publishDate = new Date(Date.parse(form.elements['publishDate'].value));
+    addedBook.description = form.elements['description'].value;
+    addedBook.registrationDate = new Date(Date.parse(form.elements['registrationDate'].value));
+    library.addBook(addedBook);
+    let booksTable = document.getElementById('booksTable');
+    addRow(addedBook, booksTable.tBodies[0]);
+    clearForm();
+    showTable();
+}
+
+function showTable() {
+    let booksForm = document.getElementsByClassName('books-form');
+    let showBooks = document.getElementsByClassName('show-books');
+    let table = document.getElementsByClassName('table');
+    table[0].style = 'display:block';
+    showBooks[0].style = 'display:none';
+    addBook[0].style = 'display:block';
+    booksForm[0].style = 'display:none'
+}
+function showForm() {
     let table = document.getElementsByClassName('table');
     table[0].style = 'display:none';
-    addBook[0].style='display:none';
+    addBook[0].style = 'display:none';
     let showBooks = document.getElementsByClassName('show-books');
     showBooks[0].style = 'display:block';
     let booksForm = document.getElementsByClassName('books-form');
     booksForm[0].style = 'display:block'
-    showBooks[0].onclick = function(){
-        table[0].style = 'display:block';
-        showBooks[0].style = 'display:none';
-        addBook[0].style='display:block';
-        booksForm[0].style = 'display:none'
-    }
+}
+function clearForm() {
+    let booksForm = document.getElementsByClassName('books-form');
+    booksForm[0].reset();
 }
