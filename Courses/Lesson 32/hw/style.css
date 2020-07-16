@@ -30,7 +30,7 @@ header h3 {
     margin-right: 20px;
 }
 
-.log-out, .add-book, .show-books, .form-row input[type=submit] {
+.log-out, .add-book, .show-books, .form-row input[type=button], .button-delete, .button-edit {
     min-width: 100px;
     font-family: inherit;
     appearance: none;
@@ -43,42 +43,46 @@ header h3 {
     cursor: pointer;
 }
 
-.add-book {
+.add-book, .button-edit {
     background: #95c11f;
     margin: 10px;
 }
 
-.show-books {
-    background: #901919;
+.show-books, .button-delete {
+    background: #A6448E;
     margin: 10px;
     display: none;
 }
 
-.log-out:hover, .form-row input[type=submit]:hover {
+.button-delete {
+    display: initial;
+}
+
+.log-out:hover, .form-row input[type=button]:hover {
     background: #1d49aa;
 }
 
-.add-book:hover {
+.add-book:hover, .button-edit:hover {
     background: #5F7D0A;
 }
 
-.show-books:hover {
-    background: #5E0808;
+.show-books:hover, .button-delete:hover {
+    background: #6C1657;
 }
 
-.log-out:focus, .form-row input[type=submit]:focus {
+.log-out:focus, .form-row input[type=button]:focus {
     outline: none;
     box-shadow: 0 0 0 4px #cbd6ee;
 }
 
-.add-book:focus {
+.add-book:focus, .button-edit:focus {
     outline: none;
     box-shadow: 0 0 0 4px #C4E079;
 }
 
-.show-books:focus {
+.show-books:focus, .button-delete:focus {
     outline: none;
-    box-shadow: 0 0 0 4px #C86D6D;
+    box-shadow: 0 0 0 4px #D38EC1;
 }
 
 table {
@@ -103,8 +107,8 @@ td, th {
 
 td {
     background: #D8E6F3;
+    color: #252967
 }
-
 
 .books-form {
     max-width: 350px;
@@ -131,8 +135,8 @@ td {
 input, textarea {
     outline: none;
     border: none;
-   background-color: #fffdee;
-    }
+    background-color: #fffdee;
+}
 
 .form-row textarea {
     width: 100%;
@@ -170,4 +174,10 @@ footer {
     justify-content: center;
     flex-direction: row;
     text-align: center;
+}
+
+.error {
+    color: #901919;
+    font-size: 18px;
+    font-weight: bold;
 }
