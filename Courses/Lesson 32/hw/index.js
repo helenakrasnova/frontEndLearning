@@ -10,5 +10,6 @@ application.init();
 application.renderBookTable();
 
 
+// тесты на эту проверку уникальности id
 
-
+// баг с годом 20000 проходит, возможно не баг

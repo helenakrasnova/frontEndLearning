@@ -10,12 +10,15 @@ export class Library {
     }
 
     addBook(book) {
-        let bookStatus = book.isValid();
-        if (bookStatus.valid === true) {
+
+        let index = this.books.findIndex((b) => b.id === book.id);
+        if (index === -1) {
             this.books.push(book);
             return true;
         }
-        return false;
+        else {
+            return false;
+        }
     }
 
     deleteBook(id) {

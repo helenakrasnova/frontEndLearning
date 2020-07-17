@@ -37,14 +37,14 @@ test('addBook correct book data, book was added', () => {
     expect(result).toBeTruthy();
 });
 
-test('addBook not correct book data, book was not added', () => {
-    let testLibrary = createLibrary();
-    let testBook = createBook();
-    testBook.title = '';
-    let result = testLibrary.addBook(testBook);
+ test('addBook not correct book data, book was not added', () => {
+     let testLibrary = createLibrary();
+     let testBook = createBook();
+     testBook.id = '1-1111-1111-1';
+     let result = testLibrary.addBook(testBook);
 
-    expect(result).toBeFalsy();
-});
+     expect(result).toBeFalsy();
+ });
 
 test('deleteBook correct book id, book deleted successfully', () => {
     let testLibrary = createLibrary();

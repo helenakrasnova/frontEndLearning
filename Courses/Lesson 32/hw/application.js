@@ -31,6 +31,7 @@ export class Application {
         buttonEdit.onclick = (event) => {
             this.bookIdToEdit = event.target.dataset['id'];
             this.showForm();
+
             this.populateFormValues(book);
         }
 
@@ -40,16 +41,20 @@ export class Application {
         buttonDelete.setAttribute('data-id', book.id);
         row.cells[8].append(buttonDelete);
         buttonDelete.onclick = (event) => {
-            let id = event.target.dataset['id'];
-            this.library.deleteBook(id);
-            let table = document.getElementById('booksTable');
+            let approveToDelete = confirm("Are you sure to delete book?");
+            if (approveToDelete === true) {
+                let id = event.target.dataset['id'];
+                this.library.deleteBook(id);
+                let table = document.getElementById('booksTable');
 
-            for (let i = 0; i < table.rows.length; i++) {
-                if (table.rows[i].cells[1].innerHTML === id) {
-                    table.deleteRow(i);
-                    break;
+                for (let i = 0; i < table.rows.length; i++) {
+                    if (table.rows[i].cells[1].innerHTML === id) {
+                        table.deleteRow(i);
+                        break;
+                    }
                 }
             }
+
         }
     }
 
@@ -95,13 +100,14 @@ export class Application {
         booksTable.append(tbody);
     }
     init() {
+        let showBooks = document.getElementsByClassName('show-books');
+        showBooks[0].onclick = () => {
+            this.showTable();
+        }
         let addBook = document.getElementsByClassName('add-book');
         addBook[0].onclick = () => {
             this.showForm();
-            let showBooks = document.getElementsByClassName('show-books');
-            showBooks[0].onclick = () => {
-                this.showTable();
-            }
+
         }
 
         let sendBook = document.getElementsByClassName('send-book');
@@ -131,7 +137,7 @@ export class Application {
                 this.showTable();
                 this.bookIdToEdit = null;
             }
-            else{
+            else {
                 throw new Error(`book with id ${this.bookIdToEdit} was not found`);
             }
         }
@@ -148,11 +154,18 @@ export class Application {
         let error = document.getElementsByClassName('error')[0];
         addedBook.id = '4-4444-4444-4';
         if (result.valid === true) {
-            this.library.addBook(addedBook);
-            let booksTable = document.getElementById('booksTable');
-            this.addRow(addedBook, booksTable.tBodies[0]);
-            this.clearForm();
-            this.showTable();
+
+            let wasAdded = this.library.addBook(addedBook);
+            if (wasAdded) {
+                let booksTable = document.getElementById('booksTable');
+                this.addRow(addedBook, booksTable.tBodies[0]);
+                this.clearForm();
+                this.showTable();
+            }
+            else {
+                error.innerHTML = 'id is not unique';
+            }
+
         }
         else {
             error.innerHTML = result.messages;
