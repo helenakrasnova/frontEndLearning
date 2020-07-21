@@ -1,0 +1,16 @@
+.searchMovies {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../../image/bg.jpeg);
+    width: 100%;
+    min-height: 400px;
+    background-position: center center;
+}
+
+.filter {
+    width: 100%;
+    min-height: inherit;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-flow: row wrap;
+}

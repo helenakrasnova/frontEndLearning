@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header';
-import SearchMovies from './components/SearchMovies';
+
+import MoviesListPage from './Pages/MoviesListPage';
+
+
 
 
 function App() {
   return (
     <>
-      <Header />
-      <SearchMovies />
+      
+      <MoviesListPage/>
     </>
 
   );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import './searchMovies.css';
 
 class SearchMovies extends Component {
     constructor() {
@@ -7,9 +7,12 @@ class SearchMovies extends Component {
     }
     render() {
         return (
-        <div className="SearchMovies" >
-            что - нибудь
+
+            <div className="searchMovies" >
+                <div className="filter">
+                    
         </div>
+            </div>
         );
 
     }
