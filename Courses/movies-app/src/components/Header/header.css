@@ -12,20 +12,21 @@
     align-items: center;
 }
 
-h1 {
+.netflix {
     width: 20%;
     min-height: 30px;
     color: #f85162;
     font-size: 25px;
-    padding-left: 10px ;
+    margin-left: 10px;
+    letter-spacing: 0.8px;
 }
 
-h1::selection {
-    background: rgba(255, 251, 102, 0.8);
-    color: rgb(19, 188, 188);
+.netflix::selection {
+    background: rgba(248, 81, 97, 0.99);
+    color: black;
 }
 
-img {
+.header img {
     padding-left: 10px;
     height: 30px;
 }

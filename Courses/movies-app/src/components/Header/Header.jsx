@@ -7,7 +7,7 @@ export default function Header() {
         <div className="header">
             <img src={logo} alt="logo" />
             <header className="App-header">
-                <h1>NetflixRoulette</h1>
+                <h1 className="netflix">netflixRoulette</h1>
             </header>
         </div>
 
