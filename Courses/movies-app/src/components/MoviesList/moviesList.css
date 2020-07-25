@@ -1,27 +1,40 @@
-.moviesList {
+.moviesList{
     width: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+}
+.allMovies {
+    width: 80%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    padding-top: 50px;
+    padding: 25px 0;
+    background-color: #fcfcfc;
 }
 
 .movie {
-    width: 320px;
-    height: 500px;
+    width: 255px;
+    height: 400px;
     margin: 20px;
+    /* opacity: 0.9;
+    transition: 0.5s linear; */
+    cursor: pointer;
 }
-
+/* .movie:hover{
+    transform: scale(1.1);
+    opacity: 1;
+} */
 .moviesList img {
-    width: 320px;
-    height: 460px;
+    width: 255px;
+    height: 365px;
     padding: 0;
 }
 
 .movieName {
-    font-size: 20px;
-    width: 50%;
-    font-weight: normal;
+    font-size: 14.5px;
+    width: 80%;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
@@ -45,4 +58,5 @@
 .movieGenre {
     display: flex;
     justify-content: flex-start;
+    font-weight: normal;
 }

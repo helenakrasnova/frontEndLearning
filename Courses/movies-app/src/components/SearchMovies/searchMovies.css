@@ -8,29 +8,38 @@
 }
 
 .filter {
+    background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     min-height: inherit;
-    background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
 }
-.findYourMovie{
+
+.searching {
+    width: 80%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.findYourMovie {
     width: 100%;
     text-align: center;
 }
+
 .findYourMovie, .searchBy {
     color: white;
     text-transform: uppercase;
-
     /* align-self: start; */
 }
 
 .findMovies {
     background-color: rgba(0, 0, 0, 0.6);
     border: 0;
-    width: 80%;
+    width: 100%;
     height: 60px;
     margin: 10px;
     border-bottom: 5px solid #f85162;
@@ -39,7 +48,6 @@
     /* font-weight: bold; */
     font-size: 20px;
     border-radius: 0;
-
     outline: none;
 }
 
@@ -48,17 +56,16 @@
     font-size: 18px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     font-weight: bold;
     flex-direction: row;
     flex-wrap: wrap;
-    
 }
 
 .searchMoviesBy, .searchMoviesButton {
     width: 110px;
     height: 35px;
-    background-color: #f85162;
+    background-color: grey;
     border: 0;
     margin: 5px;
     align-self: start;
@@ -71,19 +78,29 @@
     letter-spacing: 1px;
     cursor: pointer;
 }
-.searchMoviesBy:hover, .searchMoviesButton:hover{
+ .buttonClicked{
+    background-color: #f85162;
+} 
+.searchMoviesButton{
+    background-color: #f85162;
+}
+
+.searchMoviesBy:hover, .searchMoviesButton:hover {
     background-color: #A11A27;
 }
+
 .searchMoviesBy:focus, .searchMoviesButton:focus {
     outline: none;
     box-shadow: 0 0 0 2px #FC9EA7;
-  }
-  .searchMoviesButton{
-      width: 200px;
-      height: 50px;
-      font-size: 20px;
-      align-self: flex-end;
-  }
+}
+
+.searchMoviesButton {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    align-self: flex-end;
+}
+
 .findYourMovie::selection, .searchByChoice::selection {
     background: rgba(248, 81, 97, 0.99);
     color: black;
