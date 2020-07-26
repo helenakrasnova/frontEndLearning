@@ -18,7 +18,7 @@ class SearchMovies extends Component {
     }
     handleGenreClicked = () => {
         this.setState({
-            searchBy: 'genre'
+            searchBy: 'genres'
         })
     }
     handleSearchClicked = ()=>{
@@ -47,7 +47,7 @@ class SearchMovies extends Component {
                                 </button>
                                 <button
                                     onClick={this.handleGenreClicked}
-                                    className={`searchMoviesBy ${this.state.searchBy === 'genre' ? "buttonClicked" : ''}`}>
+                                    className={`searchMoviesBy ${this.state.searchBy === 'genres' ? "buttonClicked" : ''}`}>
                                     Genre
                                 </button>
                             </div>

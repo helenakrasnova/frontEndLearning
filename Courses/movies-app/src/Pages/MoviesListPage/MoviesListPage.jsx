@@ -11,30 +11,68 @@ import { SearchRequest } from "../../models/searchRequest";
 class MoviesListPage extends Component {
     constructor() {
         super();
-        this.state = { movies: [] };
+        let request = new SearchRequest();
+        this.state = {
+            movies: [],
+            total: 0,
+            request: request,
+        };
         this.moviesService = new MoviesService();
     }
     async componentDidMount() {
-        let movies = await this.moviesService.getMovies();
+        let response = await this.moviesService.getMovies();
         this.setState({
-            movies: movies.data
+            movies: response.data,
+            total: response.total,
         });
+
     }
     handleSearchClicked = async (searchingParams) => {
-        let searchRequest = new SearchRequest();
-        searchRequest.searchBy = searchingParams.searchBy;
-        searchRequest.search = searchingParams.query;
-        let searchingMovies = await this.moviesService.getMovies(searchRequest);
+        let request = this.state.request;
+        request.searchBy = searchingParams.searchBy;
+        request.search = searchingParams.query;
         this.setState({
-            movies: searchingMovies.data
+            request: request
+        });
+        await this.updateMovies();
+
+    }
+    handleSortByChanged = async (sortByValue) => {
+        let request = this.state.request;
+        request.sortBy = sortByValue;
+        this.setState({
+            request: request
+        })
+        await this.updateMovies();
+
+    }
+    handleSortOrderChanged = async (sortOrderValue) => {
+        let request = this.state.request;
+        request.sortOrder = sortOrderValue;
+        this.setState({
+            request: request
+        })
+        await this.updateMovies();
+    }
+
+    updateMovies = async () => {
+        let searchingMovies = await this.moviesService.getMovies(this.state.request);
+        this.setState({
+            movies: searchingMovies.data,
+            total: searchingMovies.total,
         });
     }
+
     render() {
         return (
             <>
                 <Header />
                 <SearchMovies onSearchClicked={this.handleSearchClicked} />
-                <MoviesOrdering />
+                <MoviesOrdering
+                    total={this.state.total}
+                    onSortByChanged={this.handleSortByChanged}
+                    onSortOrderChanged={this.handleSortOrderChanged}
+                />
                 <MoviesList movies={this.state.movies} />
                 <MoviesPagination />
                 <Footer />

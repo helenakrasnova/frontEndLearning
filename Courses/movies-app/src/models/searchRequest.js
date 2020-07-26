@@ -1,11 +1,10 @@
 
 export class SearchRequest {
     constructor() {
-        this.sortBy = '';
-        this.sortOrder = '';
+        this.sortBy = 'release_date';
+        this.sortOrder = 'desc';
         this.search = '';
         this.searchBy = '';
-        this.filter = [];
         this.offset = 0;
         this.limit = 10;
     }

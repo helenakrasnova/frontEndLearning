@@ -8,15 +8,33 @@ export class MoviesService {
             return '';
         }
         let queryString = `?`;
-        if (searchRequest.search) {
-            queryString += `search=${searchRequest.search}`
+        queryString = this.buildSearchClause(searchRequest, queryString);
+        queryString = this.buildSortClause(searchRequest, queryString);
+        return queryString;
+    }
+    buildSortClause(searchRequest, queryString) {
+        if (searchRequest.sortBy) {
+            queryString += `&sortBy=${searchRequest.sortBy}`
         }
-        if (searchRequest.searchBy) {
-            queryString += `&filter=${searchRequest.search}`
+        if (searchRequest.sortOrder) {
+            queryString += `&sortOrder=${searchRequest.sortOrder}`
         }
         return queryString;
     }
-
+    buildSearchClause(searchRequest, queryString) {
+        if (searchRequest.searchBy) {
+            queryString += `searchBy=${searchRequest.searchBy}`
+        }
+        if (searchRequest.search) {
+            if (searchRequest.searchBy === 'genres') {
+                queryString += `&filter=${searchRequest.search}`
+            }
+            else {
+                queryString += `&search=${searchRequest.search}`
+            }
+        }
+        return queryString;
+    }
     async getMovies(searchRequest) {
         let queryString = this.buildQueryString(searchRequest);
         let response = await fetch(`${this.moviesEndpoint}${queryString}`);
