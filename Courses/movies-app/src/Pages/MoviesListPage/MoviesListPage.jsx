@@ -11,11 +11,10 @@ import { SearchRequest } from "../../models/searchRequest";
 class MoviesListPage extends Component {
     constructor() {
         super();
-        let request = new SearchRequest();
+        this.request = new SearchRequest();
         this.state = {
             movies: [],
             total: 0,
-            request: request,
         };
         this.moviesService = new MoviesService();
     }
@@ -28,35 +27,30 @@ class MoviesListPage extends Component {
 
     }
     handleSearchClicked = async (searchingParams) => {
-        let request = this.state.request;
-        request.searchBy = searchingParams.searchBy;
-        request.search = searchingParams.query;
-        this.setState({
-            request: request
-        });
+        this.request.offset = 0;
+        this.request.searchBy = searchingParams.searchBy;
+        this.request.search = searchingParams.query;
+
         await this.updateMovies();
 
     }
     handleSortByChanged = async (sortByValue) => {
-        let request = this.state.request;
-        request.sortBy = sortByValue;
-        this.setState({
-            request: request
-        })
+        this.request.sortBy = sortByValue;
         await this.updateMovies();
 
     }
     handleSortOrderChanged = async (sortOrderValue) => {
-        let request = this.state.request;
-        request.sortOrder = sortOrderValue;
-        this.setState({
-            request: request
-        })
+        this.request.sortOrder = sortOrderValue;
+        await this.updateMovies();
+    }
+    handlePaginationChanged = async (paginationData) => {
+        this.request.limit = paginationData.limit;
+        this.request.offset = paginationData.offset;
         await this.updateMovies();
     }
 
     updateMovies = async () => {
-        let searchingMovies = await this.moviesService.getMovies(this.state.request);
+        let searchingMovies = await this.moviesService.getMovies(this.request);
         this.setState({
             movies: searchingMovies.data,
             total: searchingMovies.total,
@@ -67,14 +61,17 @@ class MoviesListPage extends Component {
         return (
             <>
                 <Header />
-                <SearchMovies onSearchClicked={this.handleSearchClicked} />
+                <SearchMovies
+                    onSearchClicked={this.handleSearchClicked} />
                 <MoviesOrdering
                     total={this.state.total}
                     onSortByChanged={this.handleSortByChanged}
-                    onSortOrderChanged={this.handleSortOrderChanged}
-                />
-                <MoviesList movies={this.state.movies} />
-                <MoviesPagination />
+                    onSortOrderChanged={this.handleSortOrderChanged} />
+                <MoviesList
+                    movies={this.state.movies} />
+                <MoviesPagination
+                    onPaginationChanged={this.handlePaginationChanged}
+                    total={this.state.total} />
                 <Footer />
             </>
         );
