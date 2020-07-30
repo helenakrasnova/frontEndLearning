@@ -41,6 +41,11 @@ export class MoviesService {
         queryString += `&limit=${searchRequest.limit}`;
         return queryString;
     }
+    async getMovie(id) {
+        let response = await fetch(`${this.moviesEndpoint}/${id}`);
+        let movie = await response.json();
+        return movie;
+    }
     async getMovies(searchRequest) {
         let queryString = this.buildQueryString(searchRequest);
         let response = await fetch(`${this.moviesEndpoint}${queryString}`);

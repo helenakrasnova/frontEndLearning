@@ -1,9 +1,10 @@
-.moviesList{
+.moviesList {
     width: 100%;
     background-color: #f5f5f5;
     display: flex;
     justify-content: center;
 }
+
 .allMovies {
     width: 80%;
     display: flex;
@@ -17,18 +18,22 @@
     width: 255px;
     height: 400px;
     margin: 20px;
-    /* opacity: 0.9;
-    transition: 0.5s linear; */
     cursor: pointer;
 }
-/* .movie:hover{
-    transform: scale(1.1);
-    opacity: 1;
-} */
+
 .moviesList img {
     width: 255px;
     height: 365px;
     padding: 0;
+}
+
+.movieRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: inherit;
+    height: 35px;
+    align-items: center;
 }
 
 .movieName {
@@ -43,20 +48,38 @@
     justify-content: center;
     align-items: center;
     border-radius: 2px;
-    width: 50px;
+    width: 20%;
     height: 20px;
     border: 1px solid black;
     font-weight: bolder;
-}
-
-.movieRow {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
 .movieGenre {
     display: flex;
     justify-content: flex-start;
     font-weight: normal;
+    width: 80%;
+}
+
+.movieRating {
+    border: 2px solid #ff5063;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: black;
+    color: #ff5063;
+    font-weight: bold;
+    font-size: 15px;
+}
+.noFilmsFound{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 60px;
 }

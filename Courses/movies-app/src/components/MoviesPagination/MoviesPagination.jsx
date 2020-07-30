@@ -6,7 +6,7 @@ class MoviesPagination extends Component {
         super(props);
 
         this.pagingData = {
-            limit: 10,
+            limit: 15,
             offset: 0,
         };
         this.state = {
@@ -63,7 +63,7 @@ class MoviesPagination extends Component {
         this.setState({
             currentPage: totalPages
         });
-        let lastPageOffset = (totalPages-1) * this.pagingData.limit;
+        let lastPageOffset = (totalPages - 1) * this.pagingData.limit;
         this.pagingData.offset = lastPageOffset;
         this.props.onPaginationChanged(this.pagingData);
     }
@@ -80,14 +80,8 @@ class MoviesPagination extends Component {
                         <li
                             onClick={this.handlePreviousPageClicked}
                         >&#60;</li>
-                        <input
-                            type="number"
-                            name="num"
-                            min="1"
-                            max="999"
-                            size="2"
-                            value={this.state.currentPage}
-                            readOnly />
+                        <li id="pagination_page">
+                            {this.state.currentPage}</li>
                         <li
                             onClick={this.handleNextPageClicked}
                         >&#62;</li>
@@ -102,9 +96,9 @@ class MoviesPagination extends Component {
                         className="limit"
                         size="1"
                         onChange={this.handleLimitChanged}>
-                        <option value="10">10</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
+                        <option value="15">15</option>
+                        <option value="45">45</option>
+                        <option value="90">90</option>
                     </select>
                 </div>
             </div>
@@ -116,6 +110,4 @@ export default MoviesPagination;
 
 
 // стрелка на верх на сёрч
-// стилизация рейтинга
-// стилизация пэйджинга
 // nextPage click disable чтобы не перешло на большее

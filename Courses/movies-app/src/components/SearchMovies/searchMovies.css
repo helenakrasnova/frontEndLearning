@@ -91,7 +91,10 @@
 
 .searchMoviesBy:focus, .searchMoviesButton:focus {
     outline: none;
-    box-shadow: 0 0 0 2px #FC9EA7;
+    /* box-shadow: 0 0 0 2px #FC9EA7; */
+}
+.searchMoviesButton:active{
+    background-color: #690812;
 }
 
 .searchMoviesButton {

@@ -6,6 +6,6 @@ export class SearchRequest {
         this.search = '';
         this.searchBy = '';
         this.offset = 0;
-        this.limit = 10;
+        this.limit = 15;
     }
 }
