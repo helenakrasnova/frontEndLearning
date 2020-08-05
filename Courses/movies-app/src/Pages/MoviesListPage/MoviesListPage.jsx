@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Preloader from "../../components/Preloader";
 import MoviesPagination from "../../components/MoviesPagination";
 import MoviesList from "../../components/MoviesList/MoviesList";
 import MoviesOrdering from "../../components/MoviesOrdering";
@@ -15,15 +14,12 @@ class MoviesListPage extends Component {
         this.state = {
             movies: [],
             total: 0,
+            loading: false
         };
         this.moviesService = new MoviesService();
     }
     async componentDidMount() {
-        let response = await this.moviesService.getMovies();
-        this.setState({
-            movies: response.data,
-            total: response.total,
-        });
+        await this.updateMovies();
 
     }
     handleSearchClicked = async (searchingParams) => {
@@ -46,38 +42,49 @@ class MoviesListPage extends Component {
     handlePaginationChanged = async (paginationData) => {
         this.request.limit = paginationData.limit;
         this.request.offset = paginationData.offset;
-        await this.updateMovies();
-    }
-
-    updateMovies = async () => {
+        // await this.updateMovies();
         let searchingMovies = await this.moviesService.getMovies(this.request);
         this.setState({
             movies: searchingMovies.data,
             total: searchingMovies.total,
+            // loading: false
+        });
+    }
+
+    updateMovies = async () => {
+        // this.setState({
+        //     loading: true
+        // });
+        let searchingMovies = await this.moviesService.getMovies(this.request);
+        this.setState({
+            movies: searchingMovies.data,
+            total: searchingMovies.total,
+            // loading: false
         });
     }
 
     render() {
-        return (
-            <>
-                <Header />
-                <SearchMovies
-                    onSearchClicked={this.handleSearchClicked} />
-                <MoviesOrdering
-                    total={this.state.total}
-                    onSortByChanged={this.handleSortByChanged}
-                    onSortOrderChanged={this.handleSortOrderChanged} />
-                <MoviesList
-                    movies={this.state.movies} />
-                <MoviesPagination
-                    onPaginationChanged={this.handlePaginationChanged}
-                    total={this.state.total} />
-                <Footer />
-            </>
-        );
-
+        if (this.state.loading === true) {
+            return (<Preloader />)
+        }
+        else {
+            return (
+                <>
+                    <SearchMovies
+                        onSearchClicked={this.handleSearchClicked} />
+                    <MoviesOrdering
+                        total={this.state.total}
+                        onSortByChanged={this.handleSortByChanged}
+                        onSortOrderChanged={this.handleSortOrderChanged} />
+                    <MoviesList
+                        movies={this.state.movies} />
+                    <MoviesPagination
+                        onPaginationChanged={this.handlePaginationChanged}
+                        total={this.state.total} />
+                </>
+            );
+        }
     }
-
 }
 
 export default MoviesListPage;

@@ -42,8 +42,12 @@ export class MoviesService {
         return queryString;
     }
     async getMovie(id) {
+
         let response = await fetch(`${this.moviesEndpoint}/${id}`);
         let movie = await response.json();
+        if (Object.keys(movie).length === 0) {
+            return null;
+        }
         return movie;
     }
     async getMovies(searchRequest) {

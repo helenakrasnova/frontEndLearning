@@ -43,13 +43,13 @@ class MoviesPagination extends Component {
 
     handleNextPageClicked = () => {
         this.pagingData.offset = this.pagingData.offset + this.pagingData.limit;
-        //total toDo
-        //this.props.total
-        this.setState((prev) => ({
-            currentPage: prev.currentPage + 1
-        }));
-
-        this.props.onPaginationChanged(this.pagingData);
+        let totalPages = this.calculatedTotalPages();
+        if (this.state.currentPage !== totalPages) {
+            this.setState((prev) => ({
+                currentPage: prev.currentPage + 1
+            }));
+            this.props.onPaginationChanged(this.pagingData);
+        }
     }
     handleFirstPageClicked = () => {
         this.pagingData.offset = 0;
@@ -59,13 +59,16 @@ class MoviesPagination extends Component {
         this.props.onPaginationChanged(this.pagingData);
     }
     handleLastPageClicked = () => {
-        let totalPages = Math.ceil(this.props.total / this.pagingData.limit);
+        let totalPages = this.calculatedTotalPages();
         this.setState({
             currentPage: totalPages
         });
         let lastPageOffset = (totalPages - 1) * this.pagingData.limit;
         this.pagingData.offset = lastPageOffset;
         this.props.onPaginationChanged(this.pagingData);
+    }
+    calculatedTotalPages() {
+        return Math.ceil(this.props.total / this.pagingData.limit);
     }
 
     render() {

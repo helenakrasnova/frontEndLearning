@@ -1,11 +1,17 @@
 import React from "react";
 import './notFound.css';
+import { Link } from "react-router-dom";
 
 
 export default function NotFound(props) {
     return (
         <>
-            {/* тут должен быть компонент с notFound */}
+            <div className="notFound">
+                Error 404: Page not found.
+            <Link to="/movies">
+                    <button className="homePage">Home page</button>
+                </Link>
+            </div>
         </>
     );
 }

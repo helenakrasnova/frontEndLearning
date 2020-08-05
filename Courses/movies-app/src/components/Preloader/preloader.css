@@ -1,0 +1,27 @@
+.overlay-loader {
+    width: 100%;
+    height: 575px;
+    position: relative;
+    background: linear-gradient(black, #7f7f7f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.load-container {
+	width: 100%;
+	height: 49px;
+	text-align: center;
+}
+
+.load-zenith {
+	width: 49px;
+	height: 49px;
+	margin: 0 auto;
+	border-radius: 50%;
+	box-shadow: 3px 3px 1px #ff5063;
+	animation: load-spin 690ms infinite linear;
+}
+
+@keyframes load-spin {
+	100%{ transform: rotate(360deg); transform: rotate(360deg); }
+}

@@ -4,16 +4,24 @@
 }
 
 .header {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 50px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
     align-items: center;
     position: fixed;
   z-index: 9999;
-}
+  margin-right: 10px;
 
+}
+.App-header{
+    width: 50%;
+    display: flex;
+}
+.headerLogin{
+    justify-content: flex-end;
+}
 .netflix {
     width: 20%;
     min-height: 30px;
@@ -31,4 +39,33 @@
 .header img {
     padding-left: 10px;
     height: 30px;
+}
+
+.login {
+    width: 110px;
+    height: 35px;
+    background-color: rgba(248, 81, 97, 0.99);
+    border: 0;
+    margin: 5px;
+    align-self: start;
+    font-weight: bold;
+    color: white;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+ 
+
+.login:hover {
+    background-color: #A11A27;
+}
+
+.login:focus {
+    outline: none;
+}
+.login:active{
+    background-color: #690812;
 }
