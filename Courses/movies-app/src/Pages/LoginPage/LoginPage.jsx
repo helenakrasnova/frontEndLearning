@@ -8,17 +8,22 @@ class LoginPage extends Component {
         this.userNameInput = React.createRef();
         this.passwordInput = React.createRef();
         this.authService = new AuthService();
+        this.state = {
+            loginError: false
+        }
     }
     handleFormSubmit = (event) => {
         event.preventDefault();
         let username = this.userNameInput.current.value;
         let password = this.passwordInput.current.value;
         let result = this.authService.logIn(username, password);
-        if (result){
+        if (result) {
             this.props.history.push('/');
         }
-        else{
-            // показать сообщение invalid username or password красненьким
+        else {
+            this.setState({
+                loginError: true
+            });
         }
     }
     render() {
@@ -41,12 +46,15 @@ class LoginPage extends Component {
                                 className="password"
                                 ref={this.passwordInput} />
                             <label htmlFor=""></label>
-                            <input 
-                            type="submit" 
-                            value="log-in" 
-                            />
+                            <input
+                                type="submit"
+                                value="log-in"/>
+                                {this.state.loginError?<div className="login-error">invalid username or password</div>:''}
                         </div>
+                        
                     </div>
+                    
+                    
                 </form>
             </>
         );

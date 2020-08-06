@@ -91,3 +91,8 @@
 .form-inner input[type="submit"]:active{
     background-color: #690812;
 }
+.login-error{
+    color:#ff5063;
+    text-transform: uppercase;
+    font-weight: bold;
+}

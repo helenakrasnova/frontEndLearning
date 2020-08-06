@@ -3,8 +3,9 @@ import './header.css';
 import logo from '../../image/logo.png';
 import { Link } from "react-router-dom";
 import { AuthService } from "../../services/AuthService";
+import { withRouter } from "react-router";
 
-export default function Header(props) {
+function Header(props) {
     let authService = new AuthService();
     let isAuthenticated = authService.isAuthenticated();
     return (
@@ -17,15 +18,15 @@ export default function Header(props) {
 
                 {isAuthenticated ?
                     (<>
-                        <div className="login">
-                            Hello, {authService.userName}
+                        <div className="hello">
+                            Hello, {authService.userName} !
                         </div>
                         <button
-                            className="login"
-                            onClick={() => { 
+                            className="logout"
+                            onClick={() => {
                                 authService.logOut();
-                                debugger
-                                props.history.push('/login'); }}>
+                                props.history.push('/login');
+                            }}>
                             logOut
                         </button>
                     </>)
@@ -37,3 +38,4 @@ export default function Header(props) {
         </div>
     );
 }
+export default withRouter(Header);

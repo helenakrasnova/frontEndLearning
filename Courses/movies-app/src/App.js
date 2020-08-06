@@ -6,12 +6,34 @@ import NotFound from './Pages/NotFound';
 import {
   BrowserRouter as Router,
   Switch,
+  Redirect,
   Route,
 } from "react-router-dom";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import LoginPage from './Pages/LoginPage';
+import { AuthService } from './services/AuthService';
 
+// function PrivateRoute({ children, ...rest }) {
+//   let authService = new AuthService();
+//   return (
+//     <Route
+//       {...rest}
+//       render={(props) =>
+//         authService.isAuthenticated() ? (
+//           children
+//         ) : (
+//             <Redirect
+//               to={{
+//                 pathname: "/login",
+//                 state: { from: props.location }
+//               }}
+//             />
+//           )
+//       }
+//     />
+//   );
+// }
 
 function App() {
   return (
