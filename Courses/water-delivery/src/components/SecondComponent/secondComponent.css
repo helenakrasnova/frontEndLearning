@@ -1,0 +1,14 @@
+.secondComponent{
+    width: 500px;
+    height: 300px;
+    background-color:#C8E6F9;
+    display: flex;
+    flex-direction: column;
+}
+.secondComponentInputs{
+    width: 150px;
+}
+.secondComponentInputs::-webkit-outer-spin-button, .secondComponentInputs::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

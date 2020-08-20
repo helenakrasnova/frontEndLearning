@@ -13,6 +13,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import LoginPage from './Pages/LoginPage';
 import { AuthService } from './services/AuthService';
+import TestTask from './components/TestTask/TestTask';
 
 // function PrivateRoute({ children, ...rest }) {
 //   let authService = new AuthService();
@@ -51,6 +52,7 @@ function App() {
       </Router>
       <Footer />
       {/* <Error /> */}
+      {/* <TestTask/> */}
     </>
 
   );
