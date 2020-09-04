@@ -11,7 +11,8 @@ function SecondComponent(props) {
         name="email"
         className="secondComponentInputs"
         value={props.email}
-        onChange={props.onEmailChanged} />
+        onChange={props.onEmailChanged} 
+        />
       <label htmlFor="firstName">firstName</label>
       <input
         type="text"
@@ -33,6 +34,7 @@ function SecondComponent(props) {
         className="secondComponentInputs"
         value={props.tel}
         onChange={props.onTelChanged} />
+        {props.invalidTel===true?<div className="error">tel is wrong</div>:null}
       <label htmlFor="contractNumber">contractNumber</label>
       <input
         type="number"
@@ -40,7 +42,9 @@ function SecondComponent(props) {
         className="secondComponentInputs"
         value={props.contractNumber}
         onChange={props.onContractNumberChanged} />
+         {props.step2notValid===true?<div className="error">step 2 not valid</div>:null}
     </div>
+   
   );
 }
 export default SecondComponent;

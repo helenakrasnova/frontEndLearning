@@ -12,3 +12,7 @@
     -webkit-appearance: none;
     margin: 0;
 }
+.error{
+    color: tomato;
+    font-weight: bold;
+}

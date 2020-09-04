@@ -1,5 +1,4 @@
-import React from 'react';
-import { Component } from "react";
+import React, { Component }  from 'react';
 import './wizard.css';
 import FirstComponent from '../components/FirstComponent';
 import SecondComponent from '../components/SecondComponent';
@@ -12,14 +11,18 @@ class Wizard extends Component {
         super(props);
         this.state = {
             page: 1,
-            value1: 1,
+            bottlesCount: 1,
             email: '',
             firstName: '',
             lastName: '',
             tel: '',
             contractNumber: '',
             time: null,
-            payment: ''
+            payment: 'cash',
+            date: null,
+            step2notValid: false,
+            step3notValid: false,
+            invalidTel: false
         };
     }
     clickedPreviousPage = () => {
@@ -32,26 +35,66 @@ class Wizard extends Component {
     }
     clickedNextPage = () => {
         if (this.state.page != 5) {
-            let newPage = this.state.page + 1;
-            this.setState({
-                page: newPage
-            });
+            if (this.state.page === 1 || this.state.page === 4) {
+                let newPage = this.state.page + 1;
+                this.setState({
+                    page: newPage
+                });
+            }
+            if (this.state.page === 2) {
+                let telNumberRegExp = /^\+\d{12}$/gi;
+                if (this.state.email && this.state.firstName && this.state.lastName && this.state.tel && this.state.contractNumber) {
+                    let matchResult = this.state.tel.match(telNumberRegExp);
+                    if (matchResult === null) {
+                        this.setState({
+                            invalidTel: true
+                        });
+                    }
+                    else {
+                        let newPage = this.state.page + 1;
+                        this.setState({
+                            page: newPage,
+                            step2notValid: false,
+                            invalidTel: false
+                        });
+                    }
+                }
+                else {
+                    this.setState({
+                        step2notValid: true
+                    });
+                }
+            }
+            if (this.state.page === 3) {
+                if (this.state.time && this.state.time) {
+                    let newPage = this.state.page + 1;
+                    this.setState({
+                        page: newPage,
+                        step3notValid: false
+                    });
+                }
+                else {
+                    this.setState({
+                        step3notValid: true
+                    });
+                }
+            }
         }
 
     }
     handleFirstValueChanged = () => {
-        if (this.state.value1 < 10) {
-            let newValue = this.state.value1 + 1;
+        if (this.state.bottlesCount < 10) {
+            let newValue = this.state.bottlesCount + 1;
             this.setState({
-                value1: newValue
+                bottlesCount: newValue
             });
         }
     }
     handleFirstValueChangedMinus = () => {
-        if (this.state.value1 > 1) {
-            let newValue = this.state.value1 - 1;
+        if (this.state.bottlesCount > 1) {
+            let newValue = this.state.bottlesCount - 1;
             this.setState({
-                value1: newValue
+                bottlesCount: newValue
             });
         }
     }
@@ -95,14 +138,19 @@ class Wizard extends Component {
         let newPayment = event.target.value;
         this.setState({
             payment: newPayment
-        })
+        });
+    }
+    handleDateChanged = (event) => {
+        this.setState({
+            date: event.target.value
+        });
     }
     render() {
         let component = null;
         switch (this.state.page) {
             case 1: component =
                 <FirstComponent
-                    value1={this.state.value1}
+                    bottlesCount={this.state.bottlesCount}
                     onNumberChanged={this.handleNumberChanged}
                     onFirstValueChange={this.handleFirstValueChanged}
                     onFirstValueChangeMinus={this.handleFirstValueChangedMinus}
@@ -114,8 +162,9 @@ class Wizard extends Component {
                     firstName={this.state.firstName}
                     lastName={this.state.lastName}
                     tel={this.state.tel}
+                    invalidTel={this.state.invalidTel}
+                    step2notValid={this.state.step2notValid}
                     contractNumber={this.state.contractNumber}
-
                     onEmailChanged={this.handleEmailChanged}
                     onFirstNameChanged={this.handleFirstNameChanged}
                     onLastNameChanged={this.handleLastNameChanged}
@@ -125,7 +174,10 @@ class Wizard extends Component {
             case 3: component =
                 <ThirdComponent
                     time={this.state.time}
+                    date={this.state.date}
                     onTimeChanged={this.handleTimeChanged}
+                    onDateChanged={this.handleDateChanged}
+                    step3notValid={this.state.step3notValid}
                 />
                 break;
             case 4: component =
@@ -133,7 +185,16 @@ class Wizard extends Component {
                     payment={this.state.payment}
                     onPaymentChanged={this.handlePaymentChanged} />
                 break;
-            case 5: component = <FifthComponent />
+            case 5: component = <FifthComponent
+                bottlesCount={this.state.bottlesCount}
+                email={this.state.email}
+                firstName={this.state.firstName}
+                lastName={this.state.lastName}
+                tel={this.state.tel}
+                contractNumber={this.state.contractNumber}
+                time={this.state.time}
+                payment={this.state.payment}
+                date={this.state.date} />
                 break;
         }
         return (
@@ -146,7 +207,6 @@ class Wizard extends Component {
                         <button
                             onClick={this.clickedNextPage} className="button-1">next page</button>
                     </div>
-
                 </div>
             </>
         );

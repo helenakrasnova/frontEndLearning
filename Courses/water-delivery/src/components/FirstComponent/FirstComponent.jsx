@@ -16,7 +16,7 @@ function FirstComponent(props) {
         min="1"
         max="10"
         onChange={props.onNumberChanged}
-        value={props.value1} />
+        value={props.bottlesCount} />
       <button
         className="firstComponentButton"
         onClick={props.onFirstValueChange}>+</button>

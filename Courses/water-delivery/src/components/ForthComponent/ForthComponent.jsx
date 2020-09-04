@@ -8,14 +8,16 @@ function ForthComponent(props) {
     <input
         name="payment"
         type="radio"
-        value={props.payment}
-        onChange={props.onPaymentChanged} />
+        value="cash"
+        onChange={props.onPaymentChanged}
+        checked={props.payment ==="cash"} />
       Cash courier
     <input
         name="payment"
         type="radio"
-        value={props.payment}
-        onChange={props.onPaymentChanged} />
+        value="card"
+        onChange={props.onPaymentChanged}
+        checked={props.payment ==="card"}  />
       Card courier
       </div>
   );
