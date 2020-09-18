@@ -57,7 +57,3 @@ export class MoviesService {
         return movies;
     }
 }
-
-
-
-//создать компонент movieDetails и в него вынести кусок с картинкой и в moviesList вызывать его

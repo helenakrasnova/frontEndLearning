@@ -17,7 +17,7 @@ export default function MovieDescription(props) {
                                     e.target.src = defaultMovie;
                                 }
                             }}
-                            alt="" />
+                            alt="defaultMovie" />
                     </div>
                     <div className="movieDescription_column2">
                         <div className="movieDescription_row row_first">

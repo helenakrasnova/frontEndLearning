@@ -50,11 +50,8 @@ class LoginPage extends Component {
                                 type="submit"
                                 value="log-in"/>
                                 {this.state.loginError?<div className="login-error">invalid username or password</div>:''}
-                        </div>
-                        
+                        </div> 
                     </div>
-                    
-                    
                 </form>
             </>
         );

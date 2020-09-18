@@ -42,24 +42,18 @@ class MoviesListPage extends Component {
     handlePaginationChanged = async (paginationData) => {
         this.request.limit = paginationData.limit;
         this.request.offset = paginationData.offset;
-        // await this.updateMovies();
         let searchingMovies = await this.moviesService.getMovies(this.request);
         this.setState({
             movies: searchingMovies.data,
             total: searchingMovies.total,
-            // loading: false
         });
     }
 
     updateMovies = async () => {
-        // this.setState({
-        //     loading: true
-        // });
         let searchingMovies = await this.moviesService.getMovies(this.request);
         this.setState({
             movies: searchingMovies.data,
             total: searchingMovies.total,
-            // loading: false
         });
     }
 

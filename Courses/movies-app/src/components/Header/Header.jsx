@@ -15,7 +15,6 @@ function Header(props) {
                 <h1 className="netflix">netflixRoulette</h1>
             </div>
             <div className="App-header headerLogin">
-
                 {isAuthenticated ?
                     (<>
                         <div className="hello">
@@ -33,7 +32,6 @@ function Header(props) {
                     : (<Link to="/login">
                         <button className="login">login</button>
                     </Link>)}
-
             </div>
         </div>
     );

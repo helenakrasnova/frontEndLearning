@@ -22,7 +22,7 @@ export default function MoviesList(props) {
                                             e.target.src = defaultMovie;
                                         }
                                     }}
-                                    alt="" />
+                                    alt="movieImage" />
                             </Link>
                             <div className="movieRow">
                                 <h4 className="movieName">{movie.title}</h4>
