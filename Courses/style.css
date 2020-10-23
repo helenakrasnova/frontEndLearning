@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.modalWindow-filter {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(41, 41, 41, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalWindow-button {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #F1CDB3;
+    border-radius: 50%;
+    background-color: rgba(41, 41, 41, 0);
+    position: absolute;
+    right: -40px;
+    top: -52px;
+}
+
+.modalWindow-card__image {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+}
+
+.modalWindow-button:focus {
+    outline: none;
+}
+
+.modalWindow-button:hover {
+    background-color: #F1CDB3;
+    cursor: pointer;
+}
+
+.modalWindow-card__content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fafafa;
+    width: 900px;
+    height: 500px;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+
+.modalWindow-image {
+    height: inherit;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.modalWindow-about {
+    width: 45%;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.06em;
+    width: 351px;
+    height: 362px;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.modalWindow-title {
+    font-size: 35px;
+    line-height: 130%;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.06em;
+}
+
+.modalWindow-subtitle {
+    font-size: 20px;
+    line-height: 115%;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.06em;
+}
+
+.modalWindow-description {
+    font-size: 15px;
+    line-height: 110%;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.06em;
+    margin: 40px 0;
+}
+
+.modalWindow-list {
+    color: #F1CDB3;
+    height: 102px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 1rem;
+}
+
+.modalWindow-list__item {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 110%;
+    font-family: Georgia;
+    font-style: normal;
+    letter-spacing: 0.06em;
+}
+
+.modalWindow-span {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.06em;
+}
+
+.list__item-content {
+    color: black;
+}
+
+@media screen and (max-width:1200px) and (min-width:768px) {
+    .modalWindow-card__content {
+        width: 82%;
+        height: 350px;
+        max-width: 900px;
+        min-width: 630px;
+    }
+    .modalWindow-about {
+        min-height: 303px;
+        justify-content: space-evenly;
+    }
+    .modalWindow-description {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:767px) and (min-width:320px) {
+    .modalWindow-card__content {
+        width: 91%;
+        max-height: 341px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modalWindow-card__image {
+        display: none;
+    }
+    .modalWindow-list__item {
+        align-self: flex-start;
+    }
+    .modalWindow-about {
+        width: 90%;
+        justify-content: space-evenly;
+    }
+    .modalWindow-description {
+        text-align: justify;
+        margin: 0;
+    }
+    .modalWindow-button{
+        right: -8px;
+    top: -57px;
+    }
+}
