@@ -10,7 +10,7 @@
   "author": "helen",
   "license": "ISC",
   "dependencies": {
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12"
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.4"
   }
 }
